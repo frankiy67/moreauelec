@@ -1,42 +1,107 @@
-import { ArrowRight } from "lucide-react";
-
-const posts = [
-  { date: "23 Jan 2026", tag: "SÉCURITÉ", title: "Prises GFCI : protection essentielle pour cuisine et salle de bain", excerpt: "Découvrez pourquoi ces prises spéciales sont obligatoires dans les pièces humides." },
-  { date: "16 Jan 2026", tag: "TABLEAU", title: "Remplacement tableau électrique : votre logement en a-t-il besoin ?", excerpt: "Les signes qui indiquent qu'il est temps de mettre votre installation aux normes." },
-  { date: "9 Jan 2026", tag: "URGENCE", title: "Quand appeler un électricien d'urgence : les signes qui ne trompent pas", excerpt: "Identifiez les situations qui exigent une intervention immédiate d'un professionnel." },
+const articles = [
+  {
+    title: "Pourquoi le disjoncteur saute sans rien de branché et que faire ?",
+    href: "https://www.lesbonsartisans.fr/pourquoi-le-disjoncteur-saute-sans-rien-de-branche-et-que-faire/",
+    photo: null,
+  },
+  {
+    title: "Tout ce qu'il y a à savoir sur les interrupteurs temporisés",
+    href: "https://www.lesbonsartisans.fr/interrupteur-temporise/",
+    photo: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600",
+  },
+  {
+    title: "La prise en saillie, quelle différence avec une prise normale ?",
+    href: "https://www.lesbonsartisans.fr/prise-en-saillie/",
+    photo: "https://images.unsplash.com/photo-1621905251189-08b45249c6b6?w=600",
+  },
+  {
+    title: "Tout savoir pour réaliser correctement un branchement à 4 fils",
+    href: "https://www.lesbonsartisans.fr/branchement-quatre-fils/",
+    photo: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600",
+  },
+  {
+    title: "Le circuit électrique d'une maison : réalisation de schéma et chiffrage",
+    href: "https://www.lesbonsartisans.fr/circuit-electrique-maison/",
+    photo: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600",
+  },
+  {
+    title: "Rallonger un câble électrique, c'est possible ?",
+    href: "https://www.lesbonsartisans.fr/rallonger-cable-electrique/",
+    photo: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600",
+  },
 ];
 
-export function Blog() {
+function ArticleLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
   return (
-    <section className="bg-primary py-20 md:py-28">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="block group">
+      {children}
+    </a>
+  );
+}
+
+export function Blog() {
+  const [textOnly, ...rest] = articles;
+  const row1Photos = rest.slice(0, 2);
+  const row2Photos = rest.slice(2);
+
+  return (
+    <section className="bg-white py-16 md:py-20">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-14 fade-on-scroll">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-            Nos derniers conseils
-          </h2>
+        <h2 className="font-bold text-2xl text-[#1F1F1F] text-center mb-10">
+          Ces articles pourraient vous intéresser
+        </h2>
+
+        {/* Ligne 1 : article texte seul (gauche) + 2 articles avec photo (droite) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {/* Texte seul */}
+          <ArticleLink href={textOnly.href}>
+            <div className="flex items-center justify-center h-full min-h-[180px] bg-[#F5F5F5] rounded-sm px-6 py-8">
+              <p className="text-[#1F1F1F] font-semibold text-sm text-center leading-snug group-hover:text-[#E8541A] transition-colors">
+                {textOnly.title}
+              </p>
+            </div>
+          </ArticleLink>
+
+          {/* 2 articles avec photo */}
+          {row1Photos.map((a) => (
+            <ArticleLink key={a.href} href={a.href}>
+              <div className="overflow-hidden rounded-sm aspect-[4/3]">
+                <img
+                  src={a.photo!}
+                  alt={a.title}
+                  className="w-full h-full object-cover group-hover:opacity-80 transition-opacity duration-200"
+                  loading="lazy"
+                />
+              </div>
+              <p className="text-[#666] text-sm text-center mt-3 leading-snug px-1">
+                {a.title}
+              </p>
+            </ArticleLink>
+          ))}
         </div>
 
+        {/* Ligne 2 : 3 articles avec photo */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {posts.map((p, i) => (
-            <article
-              key={i}
-              className="bg-white/5 border border-white/10 rounded-xl p-7 hover:border-accent/40 transition fade-on-scroll group"
-              style={{ transitionDelay: `${i * 80}ms` }}
-            >
-              <div className="flex items-center gap-3 text-sm mb-4">
-                <span className="text-white/50">{p.date}</span>
-                <span className="bg-accent text-accent-foreground font-bold px-2 py-0.5 rounded text-xs">
-                  {p.tag}
-                </span>
+          {row2Photos.map((a) => (
+            <ArticleLink key={a.href} href={a.href}>
+              <div className="overflow-hidden rounded-sm aspect-[4/3]">
+                <img
+                  src={a.photo!}
+                  alt={a.title}
+                  className="w-full h-full object-cover group-hover:opacity-80 transition-opacity duration-200"
+                  loading="lazy"
+                />
               </div>
-              <h3 className="text-white font-bold text-xl leading-snug mb-3 group-hover:text-accent transition">
-                {p.title}
-              </h3>
-              <p className="text-white/70 text-sm leading-relaxed mb-5">{p.excerpt}</p>
-              <a href="#" className="inline-flex items-center gap-1 text-accent font-semibold text-sm">
-                Lire l'article <ArrowRight className="w-4 h-4" />
-              </a>
-            </article>
+              <p className="text-[#666] text-sm text-center mt-3 leading-snug px-1">
+                {a.title}
+              </p>
+            </ArticleLink>
           ))}
         </div>
       </div>
