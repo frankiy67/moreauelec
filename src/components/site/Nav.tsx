@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { Phone, Menu, X, Zap } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
 
 const links = [
-  { label: "Nos Services", href: "#services" },
-  { label: "Urgence", href: "#urgence" },
-  { label: "Avis", href: "#avis" },
-  { label: "Tarifs", href: "#offres" },
-  { label: "Contact", href: "#contact" },
+  { label: "L'artisan", href: "#about" },
+  { label: "Ce que je fais", href: "#services" },
+  { label: "Ma façon de bosser", href: "#trust" },
+  { label: "Zone", href: "#zone" },
+  { label: "Me contacter", href: "#contact" },
 ];
 
 export function Nav() {
@@ -22,47 +22,39 @@ export function Nav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-2 border-b border-white/10" : "py-4"
+        scrolled ? "py-2 border-b border-white/10" : "py-3"
       }`}
       style={{
-        background: "rgba(10, 15, 30, 0.85)",
-        backdropFilter: "blur(16px)",
-        WebkitBackdropFilter: "blur(16px)",
+        background: "rgba(10, 15, 30, 0.92)",
+        backdropFilter: "blur(14px)",
+        WebkitBackdropFilter: "blur(14px)",
       }}
     >
       <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between gap-4">
-        <a href="#top" className="flex items-center gap-2 text-white font-bold text-lg shrink-0">
-          <span className="flex items-center justify-center w-9 h-9 rounded-lg bg-accent text-accent-foreground">
-            <Zap className="w-5 h-5" strokeWidth={2.5} />
-          </span>
-          <span>Moreau Électricité</span>
+        <a href="#top" className="flex items-baseline gap-1.5 text-white shrink-0">
+          <span className="font-serif text-xl font-semibold tracking-tight">[NOM ENTREPRISE]</span>
+          <span className="hidden sm:inline text-accent text-xs font-medium">— électricien à [VILLE]</span>
         </a>
 
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-6">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-white/80 hover:text-accent transition-colors"
+              className="text-[13px] text-white/75 hover:text-accent transition-colors"
             >
               {l.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
-          <div className="flex items-center gap-2 text-white text-sm">
-            <span className="w-2 h-2 bg-urgent rounded-full animate-pulse-dot" />
-            <span className="font-medium">Urgences 7j/7</span>
-          </div>
-          <a
-            href="tel:0100000000"
-            className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-bold px-4 py-2.5 rounded-lg hover:brightness-95 transition animate-glow"
-          >
-            <Phone className="w-4 h-4" />
-            01 XX XX XX XX
-          </a>
-        </div>
+        <a
+          href="tel:[PHONE]"
+          className="hidden md:inline-flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-3.5 py-2 rounded-md hover:brightness-95 transition text-sm"
+        >
+          <Phone className="w-4 h-4" />
+          [PHONE]
+        </a>
 
         <button
           className="lg:hidden text-white p-2"
@@ -73,7 +65,6 @@ export function Nav() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ${
           open ? "max-h-96" : "max-h-0"
@@ -85,17 +76,17 @@ export function Nav() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-white/90 font-medium py-2"
+              className="text-white/90 py-1.5"
             >
               {l.label}
             </a>
           ))}
           <a
-            href="tel:0100000000"
-            className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-bold px-4 py-3 rounded-lg mt-2"
+            href="tel:[PHONE]"
+            className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-semibold px-4 py-3 rounded-md mt-2"
           >
             <Phone className="w-4 h-4" />
-            01 XX XX XX XX
+            [PHONE]
           </a>
         </nav>
       </div>
