@@ -50,10 +50,10 @@ export function Blog() {
   const row2 = articles.slice(3);
 
   return (
-    <section className="bg-white py-16 md:py-20">
+    <section id="blog" className="bg-white py-16 md:py-20">
       <div className="container mx-auto px-4 lg:px-8">
         <h2 className="font-bold text-2xl text-[#1F1F1F] text-center mb-10">
-          Ces articles pourraient vous intéresser
+          Blog
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
