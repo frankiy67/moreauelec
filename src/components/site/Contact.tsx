@@ -1,15 +1,11 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Zap, Award, Shield, Lock, CheckCircle2 } from "lucide-react";
+import { Phone, CheckCircle2 } from "lucide-react";
 import { z } from "zod";
 
 const schema = z.object({
-  prenom: z.string().trim().min(1, "Prénom requis").max(80),
-  nom: z.string().trim().min(1, "Nom requis").max(80),
-  email: z.string().trim().email("Email invalide").max(255),
-  telephone: z.string().trim().min(8, "Téléphone invalide").max(20),
-  ville: z.string().trim().min(1, "Ville requise").max(100),
-  service: z.string().min(1, "Choisissez un service"),
-  description: z.string().max(1000).optional(),
+  prenom: z.string().trim().min(1, "Votre prénom").max(80),
+  telephone: z.string().trim().min(8, "Numéro un peu court").max(20),
+  message: z.string().trim().max(1000).optional(),
 });
 
 export function Contact() {
@@ -34,117 +30,111 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-light-bg py-20 md:py-28">
-      <div className="container mx-auto px-4 lg:px-8 grid lg:grid-cols-5 gap-8">
-        <div className="lg:col-span-3 fade-on-scroll">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-3">
-            Demandez votre devis gratuit
-          </h2>
-          <p className="text-muted-foreground mb-8">
-            Réponse garantie sous 15 minutes • Sans engagement
+    <section id="contact" className="py-20 md:py-28 bg-background">
+      <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
+        <div className="mb-10 fade-on-scroll">
+          <p className="text-sm text-muted-foreground mb-3 uppercase tracking-wider">
+            Me contacter
           </p>
-
-          {sent ? (
-            <div className="bg-card border-2 border-accent rounded-xl p-10 text-center">
-              <CheckCircle2 className="w-16 h-16 text-accent mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-primary mb-2">Demande reçue !</h3>
-              <p className="text-muted-foreground">
-                Un électricien vous rappelle dans 15 minutes.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={onSubmit} className="bg-card rounded-xl p-6 md:p-8 shadow-sm space-y-4" noValidate>
-              <div className="grid md:grid-cols-2 gap-4">
-                <Field name="prenom" label="Prénom *" error={errors.prenom} />
-                <Field name="nom" label="Nom *" error={errors.nom} />
-              </div>
-              <div className="grid md:grid-cols-2 gap-4">
-                <Field name="email" label="Email *" type="email" error={errors.email} />
-                <Field name="telephone" label="Téléphone *" type="tel" error={errors.telephone} />
-              </div>
-              <Field name="ville" label="Ville *" error={errors.ville} />
-              <div>
-                <label className="block text-sm font-semibold text-primary mb-1.5">Type de service *</label>
-                <select
-                  name="service"
-                  defaultValue=""
-                  className="w-full border border-border rounded-lg px-4 py-3 bg-background focus:outline-none focus:border-accent"
-                >
-                  <option value="" disabled>Choisir...</option>
-                  <option>Dépannage urgent</option>
-                  <option>Tableau électrique</option>
-                  <option>Éclairage</option>
-                  <option>Borne VE</option>
-                  <option>Mise aux normes</option>
-                  <option>Diagnostic</option>
-                  <option>Autre</option>
-                </select>
-                {errors.service && <p className="text-urgent text-xs mt-1">{errors.service}</p>}
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-primary mb-1.5">Description</label>
-                <textarea
-                  name="description"
-                  rows={4}
-                  maxLength={1000}
-                  className="w-full border border-border rounded-lg px-4 py-3 bg-background focus:outline-none focus:border-accent resize-none"
-                  placeholder="Décrivez brièvement votre besoin..."
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-accent text-accent-foreground font-bold py-4 rounded-lg text-base hover:brightness-95 transition shadow-md"
-              >
-                Envoyer ma demande →
-              </button>
-              <p className="text-center text-xs text-muted-foreground flex items-center justify-center gap-1.5">
-                <Lock className="w-3 h-3" /> Données protégées — Jamais de spam
-              </p>
-            </form>
-          )}
+          <h2 className="font-serif text-4xl md:text-5xl mb-4 leading-tight">
+            Laissez votre numéro,{" "}
+            <span className="marker">je vous rappelle</span>.
+          </h2>
+          <p className="text-foreground/70">
+            Si je suis sur un chantier je ne décroche pas tout de suite —
+            mais je rappelle dans la journée.
+          </p>
         </div>
 
-        <aside className="lg:col-span-2 fade-on-scroll">
-          <div className="bg-primary text-white rounded-xl p-7 md:p-8 sticky top-28">
-            <h3 className="font-bold text-xl mb-6">Nos coordonnées</h3>
-            <ul className="space-y-5">
-              <Info icon={MapPin}>France entière</Info>
-              <Info icon={Phone}>
-                <a href="tel:0100000000" className="font-bold text-accent">01 XX XX XX XX</a>
-                <div className="text-white/70 text-sm mt-0.5">Lun–Sam 8h–20h</div>
-                <div className="text-white/70 text-sm">Urgences 7j/7 24h/24</div>
-              </Info>
-              <Info icon={Mail}>contact@moreau-electricite.fr</Info>
-              <Info icon={Zap}>Réponse sous 15 min garantie</Info>
-              <Info icon={Award}>Qualifelec RGE #1108382</Info>
-              <Info icon={Shield}>Assurance décennale</Info>
-            </ul>
+        {sent ? (
+          <div className="bg-paper border-2 border-accent rounded-lg p-10 text-center fade-on-scroll">
+            <CheckCircle2 className="w-14 h-14 text-accent mx-auto mb-4" />
+            <h3 className="font-serif text-2xl mb-2">Bien reçu !</h3>
+            <p className="text-foreground/70">
+              Je vous rappelle dès que possible — souvent dans l'heure
+              pendant les horaires d'ouverture.
+            </p>
           </div>
-        </aside>
+        ) : (
+          <form
+            onSubmit={onSubmit}
+            className="bg-paper border border-border rounded-lg p-6 md:p-8 space-y-5 fade-on-scroll"
+            noValidate
+          >
+            <div className="grid md:grid-cols-2 gap-5">
+              <Field name="prenom" label="Votre prénom" error={errors.prenom} />
+              <Field
+                name="telephone"
+                label="Votre téléphone"
+                type="tel"
+                placeholder="06 ..."
+                error={errors.telephone}
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-1.5">
+                En 2 lignes, qu'est-ce qui se passe ?
+              </label>
+              <textarea
+                name="message"
+                rows={4}
+                maxLength={1000}
+                placeholder="Ex : disjoncteur qui saute depuis hier soir, je suis sur [VILLE]..."
+                className="w-full bg-white border border-border rounded-md px-4 py-3 focus:outline-none focus:border-accent resize-none"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-primary text-white font-semibold py-4 rounded-md hover:bg-primary/90 transition"
+            >
+              Je vous rappelle
+            </button>
+          </form>
+        )}
+
+        <div className="mt-10 text-center fade-on-scroll">
+          <p className="text-foreground/70 mb-2">Ou appelez directement :</p>
+          <a
+            href="tel:[PHONE]"
+            className="inline-flex items-center gap-2 font-serif text-2xl md:text-3xl text-primary hover:text-accent transition"
+          >
+            <Phone className="w-6 h-6" />
+            [PHONE]
+          </a>
+          <p className="text-sm text-muted-foreground mt-2">
+            (c'est moi qui réponds — lun. à sam., 8h–19h)
+          </p>
+        </div>
       </div>
     </section>
   );
 }
 
-function Field({ name, label, type = "text", error }: { name: string; label: string; type?: string; error?: string }) {
+function Field({
+  name,
+  label,
+  type = "text",
+  placeholder,
+  error,
+}: {
+  name: string;
+  label: string;
+  type?: string;
+  placeholder?: string;
+  error?: string;
+}) {
   return (
     <div>
-      <label className="block text-sm font-semibold text-primary mb-1.5">{label}</label>
+      <label className="block text-sm font-medium text-foreground mb-1.5">
+        {label}
+      </label>
       <input
         name={name}
         type={type}
-        className="w-full border border-border rounded-lg px-4 py-3 bg-background focus:outline-none focus:border-accent"
+        placeholder={placeholder}
+        className="w-full bg-white border border-border rounded-md px-4 py-3 focus:outline-none focus:border-accent"
       />
-      {error && <p className="text-urgent text-xs mt-1">{error}</p>}
+      {error && <p className="text-red-600 text-xs mt-1">{error}</p>}
     </div>
-  );
-}
-
-function Info({ icon: Icon, children }: { icon: React.ComponentType<{ className?: string }>; children: React.ReactNode }) {
-  return (
-    <li className="flex gap-3">
-      <Icon className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-      <div className="flex-1">{children}</div>
-    </li>
   );
 }
