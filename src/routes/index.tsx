@@ -19,7 +19,7 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: "KB Électricité",
   description: "Karim Benali, électricien indépendant à Toulouse depuis 12 ans. Dépannage sous 2h, devis gratuit, assuré décennale.",
-  telephone: "+33612345678",
+  telephone: "+336XXXXXXXX",
   email: "karim.kbelec@gmail.com",
   areaServed: [
     "Toulouse", "Blagnac", "Colomiers", "Tournefeuille", "Muret",

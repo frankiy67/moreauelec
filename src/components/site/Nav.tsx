@@ -48,11 +48,11 @@ export function Nav() {
 
         {/* Phone CTA */}
         <a
-          href="tel:0612345678"
+          href="tel:06XXXXXXXX"
           className="hidden md:flex items-center gap-2 text-[#E8541A] font-bold text-lg hover:text-[#d04a16] transition-colors"
         >
           <Phone className="w-5 h-5 shrink-0" strokeWidth={2.5} />
-          06 12 34 56 78
+          06 XX XX XX XX
         </a>
 
         {/* Mobile hamburger */}
@@ -83,11 +83,11 @@ export function Nav() {
             </a>
           ))}
           <a
-            href="tel:0612345678"
+            href="tel:06XXXXXXXX"
             className="flex items-center gap-2 text-[#E8541A] font-bold text-base py-3 mt-1"
           >
             <Phone className="w-5 h-5" strokeWidth={2.5} />
-            06 12 34 56 78
+            06 XX XX XX XX
           </a>
         </nav>
       </div>

@@ -27,7 +27,7 @@ export function Floating() {
 
       {/* Floating call button — mobile uniquement */}
       <a
-        href="tel:0612345678"
+        href="tel:06XXXXXXXX"
         className="fixed bottom-5 right-5 z-40 md:hidden bg-[#E8541A] text-white w-14 h-14 rounded-full flex flex-col items-center justify-center shadow-lg hover:bg-[#d04a16] transition-colors"
         aria-label="Appeler Karim"
       >

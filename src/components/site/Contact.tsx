@@ -127,8 +127,8 @@ export function Contact() {
             <div className="flex gap-3.5">
               <Phone className="w-5 h-5 shrink-0 mt-0.5" strokeWidth={2} />
               <div>
-                <a href="tel:0612345678" className="font-extrabold text-xl leading-none block mb-1">
-                  06 12 34 56 78
+                <a href="tel:06XXXXXXXX" className="font-extrabold text-xl leading-none block mb-1">
+                  06 XX XX XX XX
                 </a>
                 <p className="text-white/75 text-xs">c'est moi qui réponds</p>
               </div>

@@ -47,11 +47,11 @@ export function BlogLayout({ title, breadcrumb, children }: BlogLayoutProps) {
                   Karim intervient sous 2h. Devis gratuit, prix annoncé avant le départ.
                 </p>
                 <a
-                  href="tel:0612345678"
+                  href="tel:06XXXXXXXX"
                   className="flex items-center justify-center gap-2 bg-white text-[#E8541A] font-bold py-3 px-4 rounded text-base hover:bg-white/90 transition-colors mb-3"
                 >
                   <Phone className="w-4 h-4 shrink-0" strokeWidth={2.5} />
-                  06 12 34 56 78
+                  06 XX XX XX XX
                 </a>
                 <Link
                   to="/"

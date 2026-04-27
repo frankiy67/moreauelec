@@ -49,14 +49,14 @@ export function Hero() {
 
           {/* Phone big */}
           <a
-            href="tel:0612345678"
+            href="tel:06XXXXXXXX"
             className="inline-flex items-center gap-3 mb-8 group"
           >
             <span className="flex items-center justify-center w-12 h-12 rounded-full bg-[#E8541A] text-white group-hover:bg-[#d04a16] transition-colors">
               <Phone className="w-5 h-5" strokeWidth={2.5} />
             </span>
             <div>
-              <div className="text-[#E8541A] font-extrabold text-2xl leading-none">06 12 34 56 78</div>
+              <div className="text-[#E8541A] font-extrabold text-2xl leading-none">06 XX XX XX XX</div>
               <div className="text-[#777777] text-xs mt-0.5">Lun–Sam 8h–19h · Je réponds moi-même</div>
             </div>
           </a>
