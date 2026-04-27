@@ -1,33 +1,33 @@
 const articles = [
   {
     title: "Pourquoi le disjoncteur saute sans rien de branché et que faire ?",
-    href: "https://www.lesbonsartisans.fr/pourquoi-le-disjoncteur-saute-sans-rien-de-branche-et-que-faire/",
-    photo: null,
+    href: "/blog/disjoncteur-qui-saute",
+    photo: "/images/blog/disjoncteur.jpg",
   },
   {
     title: "Tout ce qu'il y a à savoir sur les interrupteurs temporisés",
-    href: "https://www.lesbonsartisans.fr/interrupteur-temporise/",
-    photo: "/images/tableau-multimetre.jpg",
+    href: "/blog/interrupteur-temporise",
+    photo: "/images/blog/interrupteur.jpg",
   },
   {
     title: "La prise en saillie, quelle différence avec une prise normale ?",
-    href: "https://www.lesbonsartisans.fr/prise-en-saillie/",
-    photo: "https://images.unsplash.com/photo-1621905251189-08b45249c6b6?w=600",
+    href: "/blog/prise-en-saillie",
+    photo: "/images/blog/prises-cables.jpg",
   },
   {
     title: "Tout savoir pour réaliser correctement un branchement à 4 fils",
-    href: "https://www.lesbonsartisans.fr/branchement-quatre-fils/",
-    photo: "/images/prise-installation.jpg",
+    href: "/blog/branchement-quatre-fils",
+    photo: "/images/blog/cables-mur.jpg",
   },
   {
     title: "Le circuit électrique d'une maison : réalisation de schéma et chiffrage",
-    href: "https://www.lesbonsartisans.fr/circuit-electrique-maison/",
-    photo: "/images/tableau-cables.jpg",
+    href: "/blog/circuit-electrique-maison",
+    photo: "/images/blog/tableau-complet.jpg",
   },
   {
     title: "Rallonger un câble électrique, c'est possible ?",
-    href: "https://www.lesbonsartisans.fr/rallonger-cable-electrique/",
-    photo: "/images/diagnostic-tableau.jpg",
+    href: "/blog/rallonger-cable-electrique",
+    photo: "/images/blog/cables-preparation.jpg",
   },
 ];
 
@@ -39,16 +39,15 @@ function ArticleLink({
   children: React.ReactNode;
 }) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="block group">
+    <a href={href} className="block group">
       {children}
     </a>
   );
 }
 
 export function Blog() {
-  const [textOnly, ...rest] = articles;
-  const row1Photos = rest.slice(0, 2);
-  const row2Photos = rest.slice(2);
+  const row1 = articles.slice(0, 3);
+  const row2 = articles.slice(3);
 
   return (
     <section className="bg-white py-16 md:py-20">
@@ -57,23 +56,12 @@ export function Blog() {
           Ces articles pourraient vous intéresser
         </h2>
 
-        {/* Ligne 1 : article texte seul (gauche) + 2 articles avec photo (droite) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          {/* Texte seul */}
-          <ArticleLink href={textOnly.href}>
-            <div className="flex items-center justify-center h-full min-h-[180px] bg-[#F5F5F5] rounded-sm px-6 py-8">
-              <p className="text-[#1F1F1F] font-semibold text-sm text-center leading-snug group-hover:text-[#E8541A] transition-colors">
-                {textOnly.title}
-              </p>
-            </div>
-          </ArticleLink>
-
-          {/* 2 articles avec photo */}
-          {row1Photos.map((a) => (
+          {row1.map((a) => (
             <ArticleLink key={a.href} href={a.href}>
               <div className="overflow-hidden rounded-sm aspect-[4/3]">
                 <img
-                  src={a.photo!}
+                  src={a.photo}
                   alt={a.title}
                   className="w-full h-full object-cover group-hover:opacity-80 transition-opacity duration-200"
                   loading="lazy"
@@ -86,13 +74,12 @@ export function Blog() {
           ))}
         </div>
 
-        {/* Ligne 2 : 3 articles avec photo */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {row2Photos.map((a) => (
+          {row2.map((a) => (
             <ArticleLink key={a.href} href={a.href}>
               <div className="overflow-hidden rounded-sm aspect-[4/3]">
                 <img
-                  src={a.photo!}
+                  src={a.photo}
                   alt={a.title}
                   className="w-full h-full object-cover group-hover:opacity-80 transition-opacity duration-200"
                   loading="lazy"

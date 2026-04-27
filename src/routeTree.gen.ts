@@ -10,33 +10,119 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogRallongerCableElectriqueRouteImport } from './routes/blog/rallonger-cable-electrique'
+import { Route as BlogPriseEnSaillieRouteImport } from './routes/blog/prise-en-saillie'
+import { Route as BlogInterrupteurTemporiseRouteImport } from './routes/blog/interrupteur-temporise'
+import { Route as BlogDisjoncteurQuiSauteRouteImport } from './routes/blog/disjoncteur-qui-saute'
+import { Route as BlogCircuitElectriqueMaisonRouteImport } from './routes/blog/circuit-electrique-maison'
+import { Route as BlogBranchementQuatreFilsRouteImport } from './routes/blog/branchement-quatre-fils'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogRallongerCableElectriqueRoute =
+  BlogRallongerCableElectriqueRouteImport.update({
+    id: '/blog/rallonger-cable-electrique',
+    path: '/blog/rallonger-cable-electrique',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BlogPriseEnSaillieRoute = BlogPriseEnSaillieRouteImport.update({
+  id: '/blog/prise-en-saillie',
+  path: '/blog/prise-en-saillie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogInterrupteurTemporiseRoute =
+  BlogInterrupteurTemporiseRouteImport.update({
+    id: '/blog/interrupteur-temporise',
+    path: '/blog/interrupteur-temporise',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BlogDisjoncteurQuiSauteRoute = BlogDisjoncteurQuiSauteRouteImport.update({
+  id: '/blog/disjoncteur-qui-saute',
+  path: '/blog/disjoncteur-qui-saute',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogCircuitElectriqueMaisonRoute =
+  BlogCircuitElectriqueMaisonRouteImport.update({
+    id: '/blog/circuit-electrique-maison',
+    path: '/blog/circuit-electrique-maison',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BlogBranchementQuatreFilsRoute =
+  BlogBranchementQuatreFilsRouteImport.update({
+    id: '/blog/branchement-quatre-fils',
+    path: '/blog/branchement-quatre-fils',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/blog/branchement-quatre-fils': typeof BlogBranchementQuatreFilsRoute
+  '/blog/circuit-electrique-maison': typeof BlogCircuitElectriqueMaisonRoute
+  '/blog/disjoncteur-qui-saute': typeof BlogDisjoncteurQuiSauteRoute
+  '/blog/interrupteur-temporise': typeof BlogInterrupteurTemporiseRoute
+  '/blog/prise-en-saillie': typeof BlogPriseEnSaillieRoute
+  '/blog/rallonger-cable-electrique': typeof BlogRallongerCableElectriqueRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/blog/branchement-quatre-fils': typeof BlogBranchementQuatreFilsRoute
+  '/blog/circuit-electrique-maison': typeof BlogCircuitElectriqueMaisonRoute
+  '/blog/disjoncteur-qui-saute': typeof BlogDisjoncteurQuiSauteRoute
+  '/blog/interrupteur-temporise': typeof BlogInterrupteurTemporiseRoute
+  '/blog/prise-en-saillie': typeof BlogPriseEnSaillieRoute
+  '/blog/rallonger-cable-electrique': typeof BlogRallongerCableElectriqueRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/blog/branchement-quatre-fils': typeof BlogBranchementQuatreFilsRoute
+  '/blog/circuit-electrique-maison': typeof BlogCircuitElectriqueMaisonRoute
+  '/blog/disjoncteur-qui-saute': typeof BlogDisjoncteurQuiSauteRoute
+  '/blog/interrupteur-temporise': typeof BlogInterrupteurTemporiseRoute
+  '/blog/prise-en-saillie': typeof BlogPriseEnSaillieRoute
+  '/blog/rallonger-cable-electrique': typeof BlogRallongerCableElectriqueRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/blog/branchement-quatre-fils'
+    | '/blog/circuit-electrique-maison'
+    | '/blog/disjoncteur-qui-saute'
+    | '/blog/interrupteur-temporise'
+    | '/blog/prise-en-saillie'
+    | '/blog/rallonger-cable-electrique'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/blog/branchement-quatre-fils'
+    | '/blog/circuit-electrique-maison'
+    | '/blog/disjoncteur-qui-saute'
+    | '/blog/interrupteur-temporise'
+    | '/blog/prise-en-saillie'
+    | '/blog/rallonger-cable-electrique'
+  id:
+    | '__root__'
+    | '/'
+    | '/blog/branchement-quatre-fils'
+    | '/blog/circuit-electrique-maison'
+    | '/blog/disjoncteur-qui-saute'
+    | '/blog/interrupteur-temporise'
+    | '/blog/prise-en-saillie'
+    | '/blog/rallonger-cable-electrique'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BlogBranchementQuatreFilsRoute: typeof BlogBranchementQuatreFilsRoute
+  BlogCircuitElectriqueMaisonRoute: typeof BlogCircuitElectriqueMaisonRoute
+  BlogDisjoncteurQuiSauteRoute: typeof BlogDisjoncteurQuiSauteRoute
+  BlogInterrupteurTemporiseRoute: typeof BlogInterrupteurTemporiseRoute
+  BlogPriseEnSaillieRoute: typeof BlogPriseEnSaillieRoute
+  BlogRallongerCableElectriqueRoute: typeof BlogRallongerCableElectriqueRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +134,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/rallonger-cable-electrique': {
+      id: '/blog/rallonger-cable-electrique'
+      path: '/blog/rallonger-cable-electrique'
+      fullPath: '/blog/rallonger-cable-electrique'
+      preLoaderRoute: typeof BlogRallongerCableElectriqueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/prise-en-saillie': {
+      id: '/blog/prise-en-saillie'
+      path: '/blog/prise-en-saillie'
+      fullPath: '/blog/prise-en-saillie'
+      preLoaderRoute: typeof BlogPriseEnSaillieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/interrupteur-temporise': {
+      id: '/blog/interrupteur-temporise'
+      path: '/blog/interrupteur-temporise'
+      fullPath: '/blog/interrupteur-temporise'
+      preLoaderRoute: typeof BlogInterrupteurTemporiseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/disjoncteur-qui-saute': {
+      id: '/blog/disjoncteur-qui-saute'
+      path: '/blog/disjoncteur-qui-saute'
+      fullPath: '/blog/disjoncteur-qui-saute'
+      preLoaderRoute: typeof BlogDisjoncteurQuiSauteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/circuit-electrique-maison': {
+      id: '/blog/circuit-electrique-maison'
+      path: '/blog/circuit-electrique-maison'
+      fullPath: '/blog/circuit-electrique-maison'
+      preLoaderRoute: typeof BlogCircuitElectriqueMaisonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/branchement-quatre-fils': {
+      id: '/blog/branchement-quatre-fils'
+      path: '/blog/branchement-quatre-fils'
+      fullPath: '/blog/branchement-quatre-fils'
+      preLoaderRoute: typeof BlogBranchementQuatreFilsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BlogBranchementQuatreFilsRoute: BlogBranchementQuatreFilsRoute,
+  BlogCircuitElectriqueMaisonRoute: BlogCircuitElectriqueMaisonRoute,
+  BlogDisjoncteurQuiSauteRoute: BlogDisjoncteurQuiSauteRoute,
+  BlogInterrupteurTemporiseRoute: BlogInterrupteurTemporiseRoute,
+  BlogPriseEnSaillieRoute: BlogPriseEnSaillieRoute,
+  BlogRallongerCableElectriqueRoute: BlogRallongerCableElectriqueRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
