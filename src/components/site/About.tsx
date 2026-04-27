@@ -1,10 +1,10 @@
 export function About() {
   return (
-    <section id="about" className="bg-white py-20 md:py-28">
-      <div className="container mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section id="about" className="bg-[#F5F5F5] py-16 md:py-20">
+      <div className="container mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         {/* Photo */}
         <div className="fade-on-scroll order-2 lg:order-1">
-          <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/5]">
+          <div className="rounded-lg overflow-hidden aspect-[4/3]">
             <img
               src="/images/about-electrician.jpg"
               alt="Karim Benali, électricien indépendant à Toulouse"
@@ -12,20 +12,17 @@ export function About() {
               style={{ objectPosition: "center 20%" }}
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E]/30 to-transparent" />
           </div>
         </div>
 
         {/* Text */}
         <div className="fade-on-scroll order-1 lg:order-2">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0A0F1E] mb-8">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] mb-6">
             Bonjour, moi c'est Karim.
           </h2>
 
-          <div className="space-y-4 text-[#1A1A1A] leading-relaxed text-base">
-            <p>
-              Électricien à Toulouse depuis 12 ans.
-            </p>
+          <div className="space-y-4 text-[#444444] leading-relaxed text-sm">
+            <p>Électricien à Toulouse depuis 12 ans.</p>
             <p>
               J'ai commencé en apprentissage à 16 ans dans les Minimes.
               Aujourd'hui je travaille seul — au moins vous savez exactement qui vient chez vous.
@@ -41,16 +38,19 @@ export function About() {
           </div>
 
           {/* Badges */}
-          <div className="flex flex-wrap gap-3 mt-10">
-            <span className="inline-flex items-center gap-2 border border-[#E8E8E8] px-4 py-2 rounded-full text-sm font-semibold text-[#0A0F1E]">
-              🛡 Assuré décennale
-            </span>
-            <span className="inline-flex items-center gap-2 border border-[#E8E8E8] px-4 py-2 rounded-full text-sm font-semibold text-[#0A0F1E]">
-              SIRET : 481 293 107 00034
-            </span>
-            <span className="inline-flex items-center gap-2 border border-[#E8E8E8] px-4 py-2 rounded-full text-sm font-semibold text-[#0A0F1E]">
-              ⚡ 12 ans d'expérience
-            </span>
+          <div className="flex flex-wrap gap-3 mt-8">
+            {[
+              "Assuré décennale",
+              "SIRET : 481 293 107 00034",
+              "12 ans d'expérience",
+            ].map((b) => (
+              <span
+                key={b}
+                className="inline-flex items-center border border-[#E2E2E2] bg-white px-3.5 py-1.5 rounded text-xs font-semibold text-[#1A1A1A]"
+              >
+                {b}
+              </span>
+            ))}
           </div>
         </div>
       </div>

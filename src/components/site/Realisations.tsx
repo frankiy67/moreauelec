@@ -27,26 +27,26 @@ const cards = [
 
 export function Realisations() {
   return (
-    <section id="realisations" className="bg-[#F8F8F6] py-20 md:py-28">
+    <section id="realisations" className="bg-white py-16 md:py-20">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-4 fade-on-scroll">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0A0F1E] mb-4">
+        <div className="text-center max-w-2xl mx-auto mb-3 fade-on-scroll">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] mb-3">
             Quelques chantiers récents
           </h2>
         </div>
-        <p className="text-center text-[#666666] mb-14 fade-on-scroll italic">
+        <p className="text-center text-[#666666] text-sm mb-10 fade-on-scroll">
           Des vraies photos de mes travaux, pas des images de stock.
         </p>
 
         {/* Mobile: horizontal scroll | Desktop: 2×2 grid */}
-        <div className="flex md:grid md:grid-cols-2 gap-6 overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x md:snap-none">
+        <div className="flex md:grid md:grid-cols-2 gap-5 overflow-x-auto md:overflow-visible pb-3 md:pb-0 snap-x md:snap-none">
           {cards.map((c, i) => (
             <div
               key={i}
-              className="realisation-card bg-white rounded-xl overflow-hidden shadow-sm fade-on-scroll shrink-0 w-80 md:w-auto snap-start"
-              style={{ transitionDelay: `${i * 80}ms` }}
+              className="realisation-card bg-white border border-[#E2E2E2] rounded-lg overflow-hidden fade-on-scroll shrink-0 w-72 md:w-auto snap-start"
+              style={{ transitionDelay: `${i * 70}ms` }}
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[16/10] overflow-hidden bg-[#F5F5F5]">
                 <img
                   src={c.src}
                   alt={c.alt}
@@ -55,10 +55,10 @@ export function Realisations() {
                 />
               </div>
               <div className="p-5">
-                <div className="inline-block bg-[#FFD700] text-[#0A0F1E] text-xs font-bold px-3 py-1 rounded-full mb-3">
+                <div className="text-[#E8541A] font-bold text-xs uppercase tracking-wide mb-2">
                   {c.label}
                 </div>
-                <p className="text-[#666666] text-sm leading-relaxed">{c.desc}</p>
+                <p className="text-[#555555] text-sm leading-relaxed">{c.desc}</p>
               </div>
             </div>
           ))}

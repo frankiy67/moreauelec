@@ -38,8 +38,8 @@ const right = [
 
 function ServiceItem({ title, desc }: { title: string; desc: string }) {
   return (
-    <div className="border-l-2 border-[#FFD700] pl-5 py-1 fade-on-scroll">
-      <h3 className="font-bold text-[#0A0F1E] text-base mb-1">{title}</h3>
+    <div className="border-l-2 border-[#E8541A] pl-5 py-0.5 fade-on-scroll">
+      <h3 className="font-bold text-[#1A1A1A] text-sm mb-1">{title}</h3>
       <p className="text-[#666666] text-sm leading-relaxed">{desc}</p>
     </div>
   );
@@ -47,38 +47,38 @@ function ServiceItem({ title, desc }: { title: string; desc: string }) {
 
 export function Services() {
   return (
-    <section id="services" className="bg-white py-20 md:py-28">
+    <section id="services" className="bg-[#F5F5F5] py-16 md:py-20">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14 fade-on-scroll">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0A0F1E] mb-4">
+        <div className="text-center max-w-2xl mx-auto mb-12 fade-on-scroll">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] mb-3">
             Mes prestations à Toulouse
           </h2>
-          <p className="text-[#666666] text-lg">
+          <p className="text-[#555555]">
             Tout ce qu'un électricien indépendant fait mieux qu'un grand réseau.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
-          <div className="space-y-8">
-            {left.map((s, i) => (
-              <ServiceItem key={i} {...s} />
-            ))}
+        <div className="bg-white border border-[#E2E2E2] rounded-lg p-8 md:p-10">
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-7">
+            <div className="space-y-7">
+              {left.map((s, i) => <ServiceItem key={i} {...s} />)}
+            </div>
+            <div className="space-y-7">
+              {right.map((s, i) => <ServiceItem key={i} {...s} />)}
+            </div>
           </div>
-          <div className="space-y-8">
-            {right.map((s, i) => (
-              <ServiceItem key={i} {...s} />
-            ))}
-          </div>
-        </div>
 
-        <div className="text-center mt-14 fade-on-scroll">
-          <p className="text-[#666666] mb-4">Vous ne trouvez pas ce que vous cherchez ?</p>
-          <a
-            href="#contact"
-            className="inline-flex items-center bg-[#0A0F1E] text-white font-bold px-6 py-3.5 rounded-lg hover:bg-[#0A0F1E]/90 transition"
-          >
-            Décrivez-moi votre besoin →
-          </a>
+          <div className="mt-10 pt-8 border-t border-[#E2E2E2] flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-[#555555] text-sm">
+              Vous ne trouvez pas ce que vous cherchez ?
+            </p>
+            <a
+              href="#contact"
+              className="inline-flex items-center bg-[#E8541A] text-white font-bold px-5 py-2.5 rounded text-sm hover:bg-[#d04a16] transition-colors"
+            >
+              Décrivez-moi votre besoin →
+            </a>
+          </div>
         </div>
       </div>
     </section>

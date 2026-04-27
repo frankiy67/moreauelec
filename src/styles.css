@@ -30,31 +30,31 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-light-bg: var(--light-bg);
-  --font-sans: 'Nunito', system-ui, sans-serif;
+  --font-sans: 'Open Sans', system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.5rem;
   --background: #FFFFFF;
   --foreground: #1A1A1A;
-  --primary: #0A0F1E;
+  --primary: #1A1A1A;
   --primary-foreground: #FFFFFF;
-  --accent: #FFD700;
-  --accent-foreground: #0A0F1E;
-  --secondary: #F8F8F6;
+  --accent: #E8541A;
+  --accent-foreground: #FFFFFF;
+  --secondary: #F5F5F5;
   --secondary-foreground: #1A1A1A;
-  --muted: #F8F8F6;
-  --muted-foreground: #666666;
-  --light-bg: #F8F8F6;
+  --muted: #F5F5F5;
+  --muted-foreground: #555555;
+  --light-bg: #F5F5F5;
   --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
   --card: #FFFFFF;
   --card-foreground: #1A1A1A;
   --popover: #FFFFFF;
   --popover-foreground: #1A1A1A;
-  --border: #E8E8E8;
-  --input: #E8E8E8;
-  --ring: #FFD700;
+  --border: #E2E2E2;
+  --input: #E2E2E2;
+  --ring: #E8541A;
 }
 
 @layer base {
@@ -65,65 +65,53 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    font-family: 'Nunito', system-ui, sans-serif;
-    font-size: 16px;
+    background-color: #FFFFFF;
+    color: #1A1A1A;
+    font-family: 'Open Sans', system-ui, sans-serif;
+    font-size: 15px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
+  h1, h2, h3, h4 {
+    color: #1A1A1A;
+    font-weight: 700;
+    line-height: 1.2;
+  }
 }
 
-/* Animations */
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.5); }
-  70% { box-shadow: 0 0 0 14px rgba(255, 215, 0, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
-}
-
-.animate-fade-up { animation: fade-up 0.6s ease-out forwards; }
-.animate-pulse-ring { animation: pulse-ring 2.5s infinite; }
-
+/* Fade-in on scroll — subtil, pas de translation */
 .fade-on-scroll {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+  transition: opacity 0.45s ease-out;
 }
 .fade-on-scroll.in-view {
   opacity: 1;
-  transform: translateY(0);
 }
 
-/* Nav shadow on scroll */
+/* Nav shadow */
 .nav-scrolled {
-  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* Atout card hover */
+/* Card hover léger */
 .atout-card {
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  transition: box-shadow 180ms ease, border-color 180ms ease;
 }
 .atout-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px -8px rgba(10, 15, 30, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
+  border-color: #E8541A;
 }
 
-/* Réalisation card */
 .realisation-card {
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  transition: box-shadow 180ms ease;
 }
 .realisation-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 40px -12px rgba(10, 15, 30, 0.18);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* FAQ accordion */
+/* FAQ */
 .faq-item {
-  border-bottom: 1px solid #E8E8E8;
+  border-bottom: 1px solid #E2E2E2;
 }
 .faq-trigger {
   cursor: pointer;

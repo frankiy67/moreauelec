@@ -27,21 +27,21 @@ const faqs = [
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="faq-item py-5">
+    <div className="faq-item py-4">
       <button
         className="faq-trigger w-full flex items-center justify-between gap-4 text-left"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
       >
-        <span className="font-bold text-[#0A0F1E] text-base pr-4">{q}</span>
+        <span className="font-semibold text-[#1A1A1A] text-sm pr-4">{q}</span>
         <ChevronDown
-          className={`w-5 h-5 text-[#666666] shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-[#E8541A] shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
         />
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ${open ? "max-h-48 mt-3" : "max-h-0"}`}
+        className={`overflow-hidden transition-all duration-250 ${open ? "max-h-48 mt-3" : "max-h-0"}`}
       >
-        <p className="text-[#666666] leading-relaxed text-sm pr-8">{a}</p>
+        <p className="text-[#666666] leading-relaxed text-sm pr-6">{a}</p>
       </div>
     </div>
   );
@@ -49,21 +49,23 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 export function FAQ() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-[#F5F5F5] py-16 md:py-20">
       <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
-        <div className="text-center mb-14 fade-on-scroll">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0A0F1E] mb-4">
+        <div className="text-center mb-10 fade-on-scroll">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] mb-3">
             Questions fréquentes
           </h2>
-          <p className="text-[#666666] text-lg">
+          <p className="text-[#555555]">
             Ce que mes clients me demandent le plus souvent.
           </p>
         </div>
 
-        <div className="fade-on-scroll border-t border-[#E8E8E8]">
-          {faqs.map((f, i) => (
-            <FaqItem key={i} {...f} />
-          ))}
+        <div className="bg-white border border-[#E2E2E2] rounded-lg px-6 md:px-8 fade-on-scroll">
+          <div className="border-t border-[#E2E2E2] first:border-t-0">
+            {faqs.map((f, i) => (
+              <FaqItem key={i} {...f} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

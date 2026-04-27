@@ -21,21 +21,19 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
-        scrolled ? "nav-scrolled" : "border-b border-[#E8E8E8]"
+      className={`fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#E2E2E2] transition-shadow duration-200 ${
+        scrolled ? "nav-scrolled" : ""
       }`}
     >
-      <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16 gap-4">
+      <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between h-[60px] gap-4">
         {/* Logo */}
         <a href="#top" className="flex items-center gap-2 shrink-0">
-          <span className="flex items-center justify-center w-8 h-8 rounded-md bg-[#FFD700]">
+          <span className="flex items-center justify-center w-7 h-7 rounded bg-[#E8541A]">
             <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none">
-              <path d="M13 2L4.5 13H11L10 22L20.5 11H14L13 2Z" fill="#0A0F1E" strokeLinejoin="round" />
+              <path d="M13 2L4.5 13H11L10 22L20.5 11H14L13 2Z" fill="white" />
             </svg>
           </span>
-          <span className="font-bold text-[#0A0F1E] text-base leading-tight">
-            KB Électricité
-          </span>
+          <span className="font-bold text-[#1A1A1A] text-[15px]">KB Électricité</span>
         </a>
 
         {/* Desktop nav */}
@@ -44,33 +42,25 @@ export function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-600 text-[#1A1A1A] hover:text-[#0A0F1E] transition-colors"
+              className="text-sm text-[#444444] hover:text-[#E8541A] transition-colors font-semibold"
             >
               {l.label}
             </a>
           ))}
         </nav>
 
-        {/* Desktop CTAs */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="tel:0612345678"
-            className="inline-flex items-center gap-2 bg-[#FFD700] text-[#0A0F1E] font-bold px-4 py-2 rounded-full text-sm hover:brightness-95 transition"
-          >
-            <Phone className="w-4 h-4" />
-            06 12 34 56 78
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center border border-[#0A0F1E] text-[#0A0F1E] font-bold px-4 py-2 rounded-full text-sm hover:bg-[#0A0F1E] hover:text-white transition"
-          >
-            Demander un devis
-          </a>
-        </div>
+        {/* Phone CTA */}
+        <a
+          href="tel:0612345678"
+          className="hidden md:flex items-center gap-2 text-[#E8541A] font-bold text-lg hover:text-[#d04a16] transition-colors"
+        >
+          <Phone className="w-5 h-5 shrink-0" strokeWidth={2.5} />
+          06 12 34 56 78
+        </a>
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden text-[#0A0F1E] p-1.5"
+          className="lg:hidden text-[#1A1A1A] p-1"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -80,26 +70,26 @@ export function Nav() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 bg-white ${
-          open ? "max-h-96 border-t border-[#E8E8E8]" : "max-h-0"
+        className={`lg:hidden overflow-hidden transition-all duration-250 bg-white ${
+          open ? "max-h-80 border-t border-[#E2E2E2]" : "max-h-0"
         }`}
       >
-        <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
+        <nav className="container mx-auto px-4 py-3 flex flex-col">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-[#1A1A1A] font-semibold py-2.5 border-b border-[#E8E8E8] last:border-0"
+              className="text-[#1A1A1A] font-semibold py-3 border-b border-[#E2E2E2] last:border-0 text-sm"
             >
               {l.label}
             </a>
           ))}
           <a
             href="tel:0612345678"
-            className="inline-flex items-center justify-center gap-2 bg-[#FFD700] text-[#0A0F1E] font-bold px-4 py-3 rounded-full mt-3"
+            className="flex items-center gap-2 text-[#E8541A] font-bold text-base py-3 mt-1"
           >
-            <Phone className="w-4 h-4" />
+            <Phone className="w-5 h-5" strokeWidth={2.5} />
             06 12 34 56 78
           </a>
         </nav>
