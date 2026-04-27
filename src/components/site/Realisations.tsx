@@ -12,16 +12,16 @@ const cards = [
     desc: "Installation entière reprise, câblage et tableau neuf. Avant : fils nus, disjoncteurs hors normes. Après : installation propre et sécurisée.",
   },
   {
-    src: "/images/renovation-bright.jpg",
-    alt: "Chantier de rénovation électrique en cours, Colomiers",
-    label: "Rénovation appartement — Colomiers",
-    desc: "Mise aux normes sur logement des années 70, câblage complet repris. Intervention coordonnée avec le plaquiste.",
+    src: "/images/prise-installation.jpg",
+    alt: "Installation d'une prise électrique encastrée, Colomiers",
+    label: "Installation prises — Colomiers",
+    desc: "Remplacement de toutes les prises d'un appartement rénové. Boîtes encastrées, connexions soignées, finition propre.",
   },
   {
-    src: "/images/renovation-gray.jpg",
-    alt: "Chantier de rénovation électrique, Tournefeuille",
-    label: "Câblage complet — Tournefeuille",
-    desc: "Appartement entièrement remis à plat. Nouveau tableau, nouvelles prises, spots LED dans toutes les pièces.",
+    src: "/images/diagnostic-tableau.jpg",
+    alt: "Diagnostic électrique au multimètre sur tableau industriel, Tournefeuille",
+    label: "Diagnostic complet — Tournefeuille",
+    desc: "Bilan complet avant vente. Mesures au multimètre, contrôle de chaque circuit, rapport remis au notaire.",
   },
 ];
 

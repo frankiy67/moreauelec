@@ -7,7 +7,7 @@ const articles = [
   {
     title: "Tout ce qu'il y a à savoir sur les interrupteurs temporisés",
     href: "https://www.lesbonsartisans.fr/interrupteur-temporise/",
-    photo: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600",
+    photo: "/images/tableau-multimetre.jpg",
   },
   {
     title: "La prise en saillie, quelle différence avec une prise normale ?",
@@ -17,17 +17,17 @@ const articles = [
   {
     title: "Tout savoir pour réaliser correctement un branchement à 4 fils",
     href: "https://www.lesbonsartisans.fr/branchement-quatre-fils/",
-    photo: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600",
+    photo: "/images/prise-installation.jpg",
   },
   {
     title: "Le circuit électrique d'une maison : réalisation de schéma et chiffrage",
     href: "https://www.lesbonsartisans.fr/circuit-electrique-maison/",
-    photo: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600",
+    photo: "/images/tableau-cables.jpg",
   },
   {
     title: "Rallonger un câble électrique, c'est possible ?",
     href: "https://www.lesbonsartisans.fr/rallonger-cable-electrique/",
-    photo: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600",
+    photo: "/images/diagnostic-tableau.jpg",
   },
 ];
 

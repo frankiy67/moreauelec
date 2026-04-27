@@ -6,10 +6,10 @@ export function About() {
         <div className="fade-on-scroll order-2 lg:order-1">
           <div className="rounded-lg overflow-hidden aspect-[4/3]">
             <img
-              src="/images/about-electrician.jpg"
-              alt="Karim Benali, électricien indépendant à Toulouse"
+              src="/images/tableau-cables.jpg"
+              alt="Mains d'électricien au travail sur un tableau électrique, câblage professionnel"
               className="w-full h-full object-cover"
-              style={{ objectPosition: "center 20%" }}
+              style={{ objectPosition: "center center" }}
               loading="lazy"
             />
           </div>

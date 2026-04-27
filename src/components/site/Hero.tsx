@@ -16,6 +16,17 @@ export function Hero() {
         Intervention sous 2h sur Toulouse et 30km — Devis gratuit avant toute intervention
       </div>
 
+      {/* Photo pleine largeur */}
+      <div className="w-full overflow-hidden" style={{ height: "260px" }}>
+        <img
+          src="/images/tableau-multimetre.jpg"
+          alt="Karim, électricien à Toulouse, contrôle un tableau électrique"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: "center 35%" }}
+          fetchpriority="high"
+        />
+      </div>
+
       <div className="container mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-start py-12 md:py-16">
         {/* Left: text */}
         <div>

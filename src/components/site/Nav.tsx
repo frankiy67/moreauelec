@@ -27,13 +27,9 @@ export function Nav() {
     >
       <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between h-[60px] gap-4">
         {/* Logo */}
-        <a href="#top" className="flex items-center gap-2 shrink-0">
-          <span className="flex items-center justify-center w-7 h-7 rounded bg-[#E8541A]">
-            <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none">
-              <path d="M13 2L4.5 13H11L10 22L20.5 11H14L13 2Z" fill="white" />
-            </svg>
-          </span>
-          <span className="font-bold text-[#1A1A1A] text-[15px]">KB Électricité</span>
+        <a href="#top" className="shrink-0 font-bold text-[15px]">
+          <span className="text-[#E8541A]">KB</span>
+          <span className="text-[#1F1F1F]"> Électricité</span>
         </a>
 
         {/* Desktop nav */}

@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock, Zap } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export function Footer() {
   return (
@@ -6,11 +6,9 @@ export function Footer() {
       <div className="container mx-auto px-4 lg:px-8 grid md:grid-cols-3 gap-10 mb-10">
         {/* Col 1 */}
         <div>
-          <a href="#top" className="flex items-center gap-2 mb-4">
-            <span className="flex items-center justify-center w-7 h-7 rounded bg-[#E8541A]">
-              <Zap className="w-4 h-4 text-white" strokeWidth={2.5} />
-            </span>
-            <span className="font-bold text-white text-base">KB Électricité</span>
+          <a href="#top" className="inline-block font-bold text-base mb-4">
+            <span className="text-[#E8541A]">KB</span>
+            <span className="text-white"> Électricité</span>
           </a>
           <p className="text-white/60 text-sm leading-relaxed mb-2">
             Artisan électricien à Toulouse depuis 12 ans.
