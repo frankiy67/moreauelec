@@ -1,20 +1,20 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Zap, Award, Shield, Lock, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, MapPin, CheckCircle2 } from "lucide-react";
 import { z } from "zod";
 
 const schema = z.object({
-  prenom: z.string().trim().min(1, "Prénom requis").max(80),
-  nom: z.string().trim().min(1, "Nom requis").max(80),
-  email: z.string().trim().email("Email invalide").max(255),
+  nom: z.string().trim().min(1, "Nom requis").max(100),
   telephone: z.string().trim().min(8, "Téléphone invalide").max(20),
-  ville: z.string().trim().min(1, "Ville requise").max(100),
-  service: z.string().min(1, "Choisissez un service"),
-  description: z.string().max(1000).optional(),
+  codepostal: z.string().trim().min(4, "Code postal requis").max(10),
+  service: z.string().min(1, "Choisissez un type de demande"),
+  description: z.string().trim().min(1, "Description requise").max(1200),
 });
+
+type Errors = Record<string, string>;
 
 export function Contact() {
   const [sent, setSent] = useState(false);
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Errors>({});
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,10 +22,8 @@ export function Contact() {
     const data = Object.fromEntries(fd.entries());
     const result = schema.safeParse(data);
     if (!result.success) {
-      const errs: Record<string, string> = {};
-      result.error.issues.forEach((i) => {
-        errs[i.path[0] as string] = i.message;
-      });
+      const errs: Errors = {};
+      result.error.issues.forEach((i) => { errs[i.path[0] as string] = i.message; });
       setErrors(errs);
       return;
     }
@@ -34,91 +32,128 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-light-bg py-20 md:py-28">
-      <div className="container mx-auto px-4 lg:px-8 grid lg:grid-cols-5 gap-8">
+    <section id="contact" className="bg-[#F8F8F6] py-20 md:py-28">
+      <div className="container mx-auto px-4 lg:px-8 grid lg:grid-cols-5 gap-10">
+        {/* Form */}
         <div className="lg:col-span-3 fade-on-scroll">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-3">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0A0F1E] mb-2">
             Demandez votre devis gratuit
           </h2>
-          <p className="text-muted-foreground mb-8">
-            Réponse garantie sous 15 minutes • Sans engagement
+          <p className="text-[#666666] mb-8">
+            Je vous rappelle dans la journée.
           </p>
 
           {sent ? (
-            <div className="bg-card border-2 border-accent rounded-xl p-10 text-center">
-              <CheckCircle2 className="w-16 h-16 text-accent mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-primary mb-2">Demande reçue !</h3>
-              <p className="text-muted-foreground">
-                Un électricien vous rappelle dans 15 minutes.
+            <div className="bg-white border border-[#E8E8E8] rounded-xl p-10 text-center">
+              <CheckCircle2 className="w-14 h-14 text-[#FFD700] mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-[#0A0F1E] mb-2">
+                Merci !
+              </h3>
+              <p className="text-[#666666]">
+                Karim vous rappelle dans la journée.
               </p>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="bg-card rounded-xl p-6 md:p-8 shadow-sm space-y-4" noValidate>
+            <form onSubmit={onSubmit} className="bg-white rounded-xl p-6 md:p-8 border border-[#E8E8E8] space-y-4" noValidate>
+              <Field name="nom" label="Nom *" error={errors.nom} />
+
               <div className="grid md:grid-cols-2 gap-4">
-                <Field name="prenom" label="Prénom *" error={errors.prenom} />
-                <Field name="nom" label="Nom *" error={errors.nom} />
-              </div>
-              <div className="grid md:grid-cols-2 gap-4">
-                <Field name="email" label="Email *" type="email" error={errors.email} />
                 <Field name="telephone" label="Téléphone *" type="tel" error={errors.telephone} />
+                <Field name="codepostal" label="Code postal *" error={errors.codepostal} />
               </div>
-              <Field name="ville" label="Ville *" error={errors.ville} />
+
               <div>
-                <label className="block text-sm font-semibold text-primary mb-1.5">Type de service *</label>
+                <label className="block text-sm font-bold text-[#0A0F1E] mb-1.5">
+                  Type de demande *
+                </label>
                 <select
                   name="service"
                   defaultValue=""
-                  className="w-full border border-border rounded-lg px-4 py-3 bg-background focus:outline-none focus:border-accent"
+                  className="w-full border border-[#E8E8E8] rounded-lg px-4 py-3 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#FFD700] text-sm"
                 >
                   <option value="" disabled>Choisir...</option>
                   <option>Dépannage urgent</option>
                   <option>Tableau électrique</option>
-                  <option>Éclairage</option>
-                  <option>Borne VE</option>
+                  <option>Installation</option>
                   <option>Mise aux normes</option>
                   <option>Diagnostic</option>
                   <option>Autre</option>
                 </select>
-                {errors.service && <p className="text-urgent text-xs mt-1">{errors.service}</p>}
+                {errors.service && <p className="text-red-600 text-xs mt-1">{errors.service}</p>}
               </div>
+
               <div>
-                <label className="block text-sm font-semibold text-primary mb-1.5">Description</label>
+                <label className="block text-sm font-bold text-[#0A0F1E] mb-1.5">
+                  Description du problème *
+                </label>
                 <textarea
                   name="description"
                   rows={4}
-                  maxLength={1000}
-                  className="w-full border border-border rounded-lg px-4 py-3 bg-background focus:outline-none focus:border-accent resize-none"
-                  placeholder="Décrivez brièvement votre besoin..."
+                  maxLength={1200}
+                  className="w-full border border-[#E8E8E8] rounded-lg px-4 py-3 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#FFD700] resize-none text-sm"
+                  placeholder="Décrivez brièvement votre problème ou besoin..."
+                />
+                {errors.description && <p className="text-red-600 text-xs mt-1">{errors.description}</p>}
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-[#0A0F1E] mb-1.5">
+                  Joindre une photo (facultatif)
+                </label>
+                <input
+                  type="file"
+                  name="photo"
+                  accept="image/*"
+                  className="block w-full text-sm text-[#666666] file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-bold file:bg-[#0A0F1E] file:text-white hover:file:bg-[#0A0F1E]/90 cursor-pointer"
                 />
               </div>
+
               <button
                 type="submit"
-                className="w-full bg-accent text-accent-foreground font-bold py-4 rounded-lg text-base hover:brightness-95 transition shadow-md"
+                className="w-full bg-[#FFD700] text-[#0A0F1E] font-extrabold py-4 rounded-lg text-base hover:brightness-95 transition shadow-md mt-2"
               >
-                Envoyer ma demande →
+                Valider ma demande
               </button>
-              <p className="text-center text-xs text-muted-foreground flex items-center justify-center gap-1.5">
-                <Lock className="w-3 h-3" /> Données protégées — Jamais de spam
-              </p>
             </form>
           )}
         </div>
 
+        {/* Contact info */}
         <aside className="lg:col-span-2 fade-on-scroll">
-          <div className="bg-primary text-white rounded-xl p-7 md:p-8 sticky top-28">
-            <h3 className="font-bold text-xl mb-6">Nos coordonnées</h3>
-            <ul className="space-y-5">
-              <Info icon={MapPin}>France entière</Info>
-              <Info icon={Phone}>
-                <a href="tel:0100000000" className="font-bold text-accent">01 XX XX XX XX</a>
-                <div className="text-white/70 text-sm mt-0.5">Lun–Sam 8h–20h</div>
-                <div className="text-white/70 text-sm">Urgences 7j/7 24h/24</div>
-              </Info>
-              <Info icon={Mail}>contact@moreau-electricite.fr</Info>
-              <Info icon={Zap}>Réponse sous 15 min garantie</Info>
-              <Info icon={Award}>Qualifelec RGE #1108382</Info>
-              <Info icon={Shield}>Assurance décennale</Info>
-            </ul>
+          <div className="bg-[#0A0F1E] text-white rounded-xl p-7 md:p-8 sticky top-24 space-y-6">
+            <div className="flex gap-4">
+              <Phone className="w-5 h-5 text-[#FFD700] mt-0.5 shrink-0" />
+              <div>
+                <a href="tel:0612345678" className="font-extrabold text-[#FFD700] text-xl">
+                  06 12 34 56 78
+                </a>
+                <p className="text-white/70 text-sm mt-0.5">c'est moi qui réponds</p>
+                <p className="text-white/60 text-sm">Lun-Sam 8h-19h</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <Mail className="w-5 h-5 text-[#FFD700] mt-0.5 shrink-0" />
+              <div>
+                <a href="mailto:karim.kbelec@gmail.com" className="text-white/90 text-sm hover:text-[#FFD700] transition break-all">
+                  karim.kbelec@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <MapPin className="w-5 h-5 text-[#FFD700] mt-0.5 shrink-0" />
+              <div className="text-white/80 text-sm leading-relaxed">
+                Toulouse et 30km autour<br />
+                Blagnac, Colomiers, Tournefeuille,<br />
+                Muret, Ramonville, Balma…
+              </div>
+            </div>
+
+            <p className="text-white/50 text-xs italic border-t border-white/10 pt-5">
+              Je réponds généralement dans la journée.<br />
+              Pour une urgence, appelez directement.
+            </p>
           </div>
         </aside>
       </div>
@@ -126,25 +161,26 @@ export function Contact() {
   );
 }
 
-function Field({ name, label, type = "text", error }: { name: string; label: string; type?: string; error?: string }) {
+function Field({
+  name,
+  label,
+  type = "text",
+  error,
+}: {
+  name: string;
+  label: string;
+  type?: string;
+  error?: string;
+}) {
   return (
     <div>
-      <label className="block text-sm font-semibold text-primary mb-1.5">{label}</label>
+      <label className="block text-sm font-bold text-[#0A0F1E] mb-1.5">{label}</label>
       <input
         name={name}
         type={type}
-        className="w-full border border-border rounded-lg px-4 py-3 bg-background focus:outline-none focus:border-accent"
+        className="w-full border border-[#E8E8E8] rounded-lg px-4 py-3 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#FFD700] text-sm"
       />
-      {error && <p className="text-urgent text-xs mt-1">{error}</p>}
+      {error && <p className="text-red-600 text-xs mt-1">{error}</p>}
     </div>
-  );
-}
-
-function Info({ icon: Icon, children }: { icon: React.ComponentType<{ className?: string }>; children: React.ReactNode }) {
-  return (
-    <li className="flex gap-3">
-      <Icon className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-      <div className="flex-1">{children}</div>
-    </li>
   );
 }

@@ -1,0 +1,69 @@
+const cards = [
+  {
+    src: "/images/tableau-avant-apres.jpg",
+    alt: "Tableau électrique avant et après mise aux normes, Rangueil Toulouse",
+    label: "Mise aux normes — Rangueil, Toulouse",
+    desc: "Tableau des années 80 remplacé en conformité NF C 15-100. Le client voulait vendre son appartement — le diagnostic bloquait la transaction.",
+  },
+  {
+    src: "/images/tableau-3-etapes.jpg",
+    alt: "Réfection complète d'un tableau électrique en trois étapes, Blagnac",
+    label: "Réfection complète — Blagnac",
+    desc: "Installation entière reprise, câblage et tableau neuf. Avant : fils nus, disjoncteurs hors normes. Après : installation propre et sécurisée.",
+  },
+  {
+    src: "/images/renovation-bright.jpg",
+    alt: "Chantier de rénovation électrique en cours, Colomiers",
+    label: "Rénovation appartement — Colomiers",
+    desc: "Mise aux normes sur logement des années 70, câblage complet repris. Intervention coordonnée avec le plaquiste.",
+  },
+  {
+    src: "/images/renovation-gray.jpg",
+    alt: "Chantier de rénovation électrique, Tournefeuille",
+    label: "Câblage complet — Tournefeuille",
+    desc: "Appartement entièrement remis à plat. Nouveau tableau, nouvelles prises, spots LED dans toutes les pièces.",
+  },
+];
+
+export function Realisations() {
+  return (
+    <section id="realisations" className="bg-[#F8F8F6] py-20 md:py-28">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-4 fade-on-scroll">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0A0F1E] mb-4">
+            Quelques chantiers récents
+          </h2>
+        </div>
+        <p className="text-center text-[#666666] mb-14 fade-on-scroll italic">
+          Des vraies photos de mes travaux, pas des images de stock.
+        </p>
+
+        {/* Mobile: horizontal scroll | Desktop: 2×2 grid */}
+        <div className="flex md:grid md:grid-cols-2 gap-6 overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x md:snap-none">
+          {cards.map((c, i) => (
+            <div
+              key={i}
+              className="realisation-card bg-white rounded-xl overflow-hidden shadow-sm fade-on-scroll shrink-0 w-80 md:w-auto snap-start"
+              style={{ transitionDelay: `${i * 80}ms` }}
+            >
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={c.src}
+                  alt={c.alt}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-5">
+                <div className="inline-block bg-[#FFD700] text-[#0A0F1E] text-xs font-bold px-3 py-1 rounded-full mb-3">
+                  {c.label}
+                </div>
+                <p className="text-[#666666] text-sm leading-relaxed">{c.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

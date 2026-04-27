@@ -1,15 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
-import { UrgencyBanner } from "@/components/site/UrgencyBanner";
-import { Callback } from "@/components/site/Callback";
+import { Atouts } from "@/components/site/Atouts";
+import { Process } from "@/components/site/Process";
 import { Services } from "@/components/site/Services";
-import { WhyUs } from "@/components/site/WhyUs";
-import { Offers } from "@/components/site/Offers";
-import { Reviews } from "@/components/site/Reviews";
-import { Tools } from "@/components/site/Tools";
-import { Zones } from "@/components/site/Zones";
-import { Blog } from "@/components/site/Blog";
+import { Realisations } from "@/components/site/Realisations";
+import { About } from "@/components/site/About";
+import { Engagements } from "@/components/site/Engagements";
+import { FAQ } from "@/components/site/FAQ";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { Floating } from "@/components/site/Floating";
@@ -18,31 +16,37 @@ import { ScrollReveal } from "@/components/site/ScrollReveal";
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Moreau Électricité",
-  description:
-    "Électricien certifié Qualifelec RGE intervenant partout en France. Dépannage d'urgence 24h/24, devis gratuit, assurance décennale.",
-  telephone: "+33100000000",
-  email: "contact@moreau-electricite.fr",
-  areaServed: "FR",
-  address: { "@type": "PostalAddress", addressCountry: "FR" },
-  aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "4000" },
-  openingHours: ["Mo-Sa 08:00-20:00"],
+  name: "KB Électricité",
+  description: "Karim Benali, électricien indépendant à Toulouse depuis 12 ans. Dépannage sous 2h, devis gratuit, assuré décennale.",
+  telephone: "+33612345678",
+  email: "karim.kbelec@gmail.com",
+  areaServed: [
+    "Toulouse", "Blagnac", "Colomiers", "Tournefeuille", "Muret",
+    "Ramonville-Saint-Agne", "Castanet-Tolosan", "L'Union", "Labège",
+    "Balma", "Saint-Orens-de-Gameville", "Portet-sur-Garonne"
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Toulouse",
+    addressRegion: "Haute-Garonne",
+    addressCountry: "FR",
+  },
+  identifier: { "@type": "PropertyValue", name: "SIRET", value: "481 293 107 00034" },
+  openingHours: ["Mo-Sa 08:00-19:00"],
 };
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Électricien France — Moreau Électricité | Devis Gratuit 24h/24" },
+      { title: "Électricien Toulouse — KB Électricité | Karim Benali | Devis Gratuit" },
       {
         name: "description",
-        content:
-          "Électricien certifié Qualifelec partout en France. Intervention sous 2h, 7j/7. Devis gratuit. 4000+ avis Google.",
+        content: "Karim Benali, électricien indépendant à Toulouse depuis 12 ans. Dépannage urgence sous 2h, tableau électrique, mise aux normes. Devis gratuit. Toulouse et 30km.",
       },
-      { property: "og:title", content: "Moreau Électricité — Électricien certifié Qualifelec France" },
+      { property: "og:title", content: "KB Électricité — Électricien Toulouse" },
       {
         property: "og:description",
-        content:
-          "Dépannage urgence, tableau électrique, mise aux normes. Intervention 60-90 min, 7j/7. Devis gratuit.",
+        content: "Artisan électricien à Toulouse. Dépannage sous 2h, tableau électrique, installation. Devis gratuit, assuré décennale.",
       },
       { property: "og:type", content: "website" },
     ],
@@ -55,20 +59,18 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <ScrollReveal />
       <Nav />
       <main>
         <Hero />
-        <UrgencyBanner />
-        <Callback />
+        <Atouts />
+        <Process />
         <Services />
-        <WhyUs />
-        <Offers />
-        <Reviews />
-        <Tools />
-        <Zones />
-        <Blog />
+        <Realisations />
+        <About />
+        <Engagements />
+        <FAQ />
         <Contact />
       </main>
       <Footer />

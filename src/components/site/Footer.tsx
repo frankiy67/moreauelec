@@ -1,60 +1,77 @@
-import { Zap, Facebook, Instagram, Youtube } from "lucide-react";
-
 export function Footer() {
   return (
-    <footer className="bg-primary text-white pt-16 pb-8 border-t border-white/10">
+    <footer className="bg-[#0A0F1E] text-white pt-16 pb-8">
       <div className="container mx-auto px-4 lg:px-8 grid md:grid-cols-3 gap-10 mb-10">
+        {/* Col 1 */}
         <div>
-          <a href="#top" className="flex items-center gap-2 font-bold text-lg mb-4">
-            <span className="flex items-center justify-center w-9 h-9 rounded-lg bg-accent text-accent-foreground">
-              <Zap className="w-5 h-5" strokeWidth={2.5} />
+          <a href="#top" className="flex items-center gap-2 mb-4">
+            <span className="flex items-center justify-center w-8 h-8 rounded-md bg-[#FFD700]">
+              <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none">
+                <path d="M13 2L4.5 13H11L10 22L20.5 11H14L13 2Z" fill="#0A0F1E" strokeLinejoin="round" />
+              </svg>
             </span>
-            Moreau Électricité
+            <span className="font-bold text-white text-base">KB Électricité</span>
           </a>
-          <p className="text-white/70 text-sm mb-5 italic">
-            On arrive. On répare. On garantit.
+          <p className="text-white/70 text-sm mb-2 leading-relaxed">
+            Artisan électricien à Toulouse depuis 12 ans.
           </p>
-          <div className="flex gap-3">
-            {[Facebook, Instagram, Youtube].map((Icon, i) => (
-              <a key={i} href="#" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-accent hover:text-accent-foreground hover:border-accent transition">
-                <Icon className="w-4 h-4" />
-              </a>
-            ))}
-            <a href="#" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-accent hover:text-accent-foreground hover:border-accent transition text-xs font-bold">
-              G
-            </a>
-          </div>
+          <p className="text-white/40 text-xs">
+            SIRET : 481 293 107 00034
+          </p>
         </div>
 
+        {/* Col 2 */}
         <div>
-          <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-accent">Liens</h4>
-          <ul className="grid grid-cols-2 gap-y-2 text-sm text-white/80">
+          <h4 className="font-bold text-sm text-[#FFD700] uppercase tracking-wider mb-4">
+            Liens rapides
+          </h4>
+          <ul className="space-y-2 text-sm text-white/75">
             {[
-              "Nos Services",
-              "Urgence 24h/24",
-              "Zones",
-              "Blog",
-              "Contact",
-              "Mentions légales",
-              "Politique confidentialité",
+              { label: "Services", href: "#services" },
+              { label: "Réalisations", href: "#realisations" },
+              { label: "Comment ça marche", href: "#process" },
+              { label: "Contact", href: "#contact" },
+              { label: "Mentions légales", href: "#" },
             ].map((l) => (
-              <li key={l}><a href="#" className="hover:text-accent transition">{l}</a></li>
+              <li key={l.label}>
+                <a href={l.href} className="hover:text-[#FFD700] transition">
+                  {l.label}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
 
+        {/* Col 3 */}
         <div>
-          <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-accent">Horaires</h4>
-          <ul className="text-sm text-white/80 space-y-2">
-            <li><span className="font-semibold text-white">Lun–Sam :</span> 8h–20h</li>
-            <li><span className="font-semibold text-white">Urgences :</span> 7j/7 24h/24</li>
+          <h4 className="font-bold text-sm text-[#FFD700] uppercase tracking-wider mb-4">
+            Contact
+          </h4>
+          <ul className="space-y-3 text-sm text-white/75">
+            <li>
+              <a href="tel:0612345678" className="hover:text-[#FFD700] transition font-semibold text-white">
+                📞 06 12 34 56 78
+              </a>
+            </li>
+            <li>
+              <a href="mailto:karim.kbelec@gmail.com" className="hover:text-[#FFD700] transition break-all">
+                ✉️ karim.kbelec@gmail.com
+              </a>
+            </li>
+            <li>📍 Toulouse et 30km autour</li>
+            <li>🕐 Lun-Sam 8h-19h</li>
           </ul>
-          <p className="text-xs text-white/40 mt-6">Site réalisé avec ⚡ par Moreau Studio</p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8 pt-6 border-t border-white/10 text-center text-xs text-white/50">
-        © 2026 Moreau Électricité — Tous droits réservés
+      <div className="container mx-auto px-4 lg:px-8 border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-white/40">
+        <span>© 2026 KB Électricité — Tous droits réservés</span>
+        <span>
+          Site réalisé par{" "}
+          <a href="tel:0756950273" className="hover:text-[#FFD700] transition">
+            François Vallat — 07 56 95 02 73
+          </a>
+        </span>
       </div>
     </footer>
   );
