@@ -19,7 +19,7 @@ const jsonLd = {
   description:
     "Électricien artisan indépendant à Toulouse. Dépannage, tableau électrique, éclairage, mise aux normes. Assuré décennale.",
   telephone: "+330756950273",
-  email: "contact@voltanelec.fr",
+  email: "contact@voltane-elec.fr",
   areaServed: [
     "Toulouse", "Blagnac", "Colomiers", "Tournefeuille", "Muret",
     "Ramonville-Saint-Agne", "Castanet-Tolosan", "Balma"

@@ -144,10 +144,10 @@ export function Contact() {
             <div className="flex gap-3.5">
               <Mail className="w-5 h-5 shrink-0 mt-0.5" strokeWidth={2} />
               <a
-                href="mailto:contact@voltanelec.fr"
+                href="mailto:contact@voltane-elec.fr"
                 className="text-sm text-white/90 hover:text-white transition-colors break-all"
               >
-                contact@voltanelec.fr
+                contact@voltane-elec.fr
               </a>
             </div>
 
