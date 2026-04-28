@@ -3,8 +3,9 @@ import { Phone, Menu, X, Zap } from "lucide-react";
 
 const links = [
   { label: "Services", href: "#services" },
-  { label: "Urgence", href: "#urgence" },
-  { label: "Engagements", href: "#avis" },
+  { label: "Réalisations", href: "#realisations" },
+  { label: "Process", href: "#process" },
+  { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -20,51 +21,44 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-2 border-b border-white/10" : "py-4"
+      className={`fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#E2E2E2] transition-shadow duration-200 ${
+        scrolled ? "shadow-sm" : ""
       }`}
-      style={{
-        background: "rgba(10, 15, 30, 0.85)",
-        backdropFilter: "blur(16px)",
-        WebkitBackdropFilter: "blur(16px)",
-      }}
     >
-      <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between gap-4">
-        <a href="#top" className="flex items-center gap-2 text-white font-bold text-lg shrink-0">
-          <span className="flex items-center justify-center w-9 h-9 rounded-lg bg-accent text-accent-foreground">
-            <Zap className="w-5 h-5" strokeWidth={2.5} />
+      <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between h-[60px] gap-4">
+        {/* Logo */}
+        <a href="#top" className="flex items-center gap-2 text-[#1A1A1A] font-bold text-[15px] shrink-0">
+          <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#FF6B35] text-white">
+            <Zap className="w-4 h-4" strokeWidth={2.5} />
           </span>
-          <span>Voltane Élec</span>
+          Voltane Élec
         </a>
 
-        <nav className="hidden lg:flex items-center gap-7">
+        {/* Desktop nav */}
+        <nav className="hidden lg:flex items-center gap-6">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-white/80 hover:text-accent transition-colors"
+              className="text-sm font-semibold text-[#1A1A1A] hover:text-[#FF6B35] transition-colors"
             >
               {l.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
-          <div className="flex items-center gap-2 text-white text-sm">
-            <span className="w-2 h-2 bg-urgent rounded-full animate-pulse-dot" />
-            <span className="font-medium">Urgences 7j/7</span>
-          </div>
-          <a
-            href="tel:0756950273"
-            className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-bold px-4 py-2.5 rounded-lg hover:brightness-95 transition animate-glow"
-          >
-            <Phone className="w-4 h-4" />
-            07 56 95 02 73
-          </a>
-        </div>
+        {/* Phone CTA */}
+        <a
+          href="tel:0756950273"
+          className="hidden md:inline-flex items-center gap-2 bg-[#FF6B35] text-white font-bold px-4 py-2 rounded-lg text-sm hover:bg-[#E55A20] transition-colors shrink-0"
+        >
+          <Phone className="w-4 h-4" strokeWidth={2.5} />
+          07 56 95 02 73
+        </a>
 
+        {/* Mobile hamburger */}
         <button
-          className="lg:hidden text-white p-2"
+          className="lg:hidden text-[#1A1A1A] p-1"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -74,24 +68,24 @@ export function Nav() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          open ? "max-h-96" : "max-h-0"
+        className={`lg:hidden overflow-hidden transition-all duration-300 bg-white ${
+          open ? "max-h-96 border-t border-[#E2E2E2]" : "max-h-0"
         }`}
       >
-        <nav className="container mx-auto px-4 py-4 flex flex-col gap-3 border-t border-white/10 mt-2">
+        <nav className="container mx-auto px-4 py-3 flex flex-col">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-white/90 font-medium py-2"
+              className="text-[#1A1A1A] font-semibold py-3 border-b border-[#E2E2E2] last:border-0 text-sm"
             >
               {l.label}
             </a>
           ))}
           <a
             href="tel:0756950273"
-            className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-bold px-4 py-3 rounded-lg mt-2"
+            className="inline-flex items-center justify-center gap-2 bg-[#FF6B35] text-white font-bold px-4 py-3 rounded-lg mt-3 text-sm"
           >
             <Phone className="w-4 h-4" />
             07 56 95 02 73
