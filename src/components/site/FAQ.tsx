@@ -35,7 +35,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
       >
         <span className="font-semibold text-[#1A1A1A] text-sm pr-4">{q}</span>
         <ChevronDown
-          className={`w-4 h-4 text-[#FF6B35] shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-[#1E3A5F] shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
         />
       </button>
       <div
@@ -49,7 +49,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 export function FAQ() {
   return (
-    <section className="bg-[#F5F5F5] py-16 md:py-20">
+    <section className="bg-[#F4F7FB] py-16 md:py-20">
       <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
         <div className="text-center mb-10 fade-on-scroll">
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] mb-3">
@@ -60,8 +60,8 @@ export function FAQ() {
           </p>
         </div>
 
-        <div className="bg-white border border-[#E2E2E2] rounded-lg px-6 md:px-8 fade-on-scroll">
-          <div className="border-t border-[#E2E2E2] first:border-t-0">
+        <div className="bg-white border border-[#E0E6EF] rounded-lg px-6 md:px-8 fade-on-scroll">
+          <div className="border-t border-[#E0E6EF] first:border-t-0">
             {faqs.map((f, i) => (
               <FaqItem key={i} {...f} />
             ))}

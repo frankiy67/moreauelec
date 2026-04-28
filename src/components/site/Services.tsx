@@ -14,7 +14,7 @@ const right = [
 
 function ServiceItem({ title, desc }: { title: string; desc: string }) {
   return (
-    <div className="border-l-2 border-[#FF6B35] pl-5 py-0.5">
+    <div className="border-l-2 border-[#E63946] pl-5 py-0.5">
       <h3 className="font-bold text-[#1A1A1A] text-sm mb-1">{title}</h3>
       <p className="text-[#666666] text-sm leading-relaxed">{desc}</p>
     </div>
@@ -23,13 +23,13 @@ function ServiceItem({ title, desc }: { title: string; desc: string }) {
 
 export function Services() {
   return (
-    <section id="services" className="bg-[#F5F5F5] py-16 md:py-20">
+    <section id="services" className="bg-[#F4F7FB] py-16 md:py-20">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] mb-3">Mes prestations à Toulouse</h2>
           <p className="text-[#555555]">Tout ce qu'un électricien indépendant fait mieux qu'un grand réseau.</p>
         </div>
-        <div className="bg-white border border-[#E2E2E2] rounded-lg p-8 md:p-10">
+        <div className="bg-white border border-[#E0E6EF] rounded-lg p-8 md:p-10">
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-7">
             <div className="space-y-7">{left.map((s, i) => <ServiceItem key={i} {...s} />)}</div>
             <div className="space-y-7">{right.map((s, i) => <ServiceItem key={i} {...s} />)}</div>

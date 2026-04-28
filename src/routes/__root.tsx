@@ -13,7 +13,7 @@ function NotFoundComponent() {
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded bg-[#FF6B35] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#E55A20] transition-colors"
+            className="inline-flex items-center justify-center rounded bg-[#1E3A5F] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#163050] transition-colors"
           >
             Retour à l'accueil
           </Link>

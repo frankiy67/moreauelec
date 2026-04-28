@@ -1,6 +1,6 @@
 export function About() {
   return (
-    <section id="about" className="bg-[#F5F5F5] py-16 md:py-20">
+    <section id="about" className="bg-[#F4F7FB] py-16 md:py-20">
       <div className="container mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         {/* Photo */}
         <div className="fade-on-scroll order-2 lg:order-1">
@@ -46,7 +46,7 @@ export function About() {
             ].map((b) => (
               <span
                 key={b}
-                className="inline-flex items-center border border-[#E2E2E2] bg-white px-3.5 py-1.5 rounded text-xs font-semibold text-[#1A1A1A]"
+                className="inline-flex items-center border border-[#E0E6EF] bg-white px-3.5 py-1.5 rounded text-xs font-semibold text-[#1A1A1A]"
               >
                 {b}
               </span>

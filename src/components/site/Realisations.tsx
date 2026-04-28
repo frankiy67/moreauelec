@@ -43,10 +43,10 @@ export function Realisations() {
           {cards.map((c, i) => (
             <div
               key={i}
-              className="realisation-card bg-white border border-[#E2E2E2] rounded-lg overflow-hidden fade-on-scroll shrink-0 w-72 md:w-auto snap-start"
+              className="realisation-card bg-white border border-[#E0E6EF] rounded-lg overflow-hidden fade-on-scroll shrink-0 w-72 md:w-auto snap-start"
               style={{ transitionDelay: `${i * 70}ms` }}
             >
-              <div className="aspect-[16/10] overflow-hidden bg-[#F5F5F5]">
+              <div className="aspect-[16/10] overflow-hidden bg-[#F4F7FB]">
                 <img
                   src={c.src}
                   alt={c.alt}
@@ -55,7 +55,7 @@ export function Realisations() {
                 />
               </div>
               <div className="p-5">
-                <div className="text-[#FF6B35] font-bold text-xs uppercase tracking-wide mb-2">
+                <div className="text-[#1E3A5F] font-bold text-xs uppercase tracking-wide mb-2">
                   {c.label}
                 </div>
                 <p className="text-[#555555] text-sm leading-relaxed">{c.desc}</p>

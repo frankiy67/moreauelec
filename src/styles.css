@@ -37,24 +37,24 @@
   --radius: 0.5rem;
   --background: #FFFFFF;
   --foreground: #1A1A1A;
-  --primary: #1A1A1A;
+  --primary: #1E3A5F;
   --primary-foreground: #FFFFFF;
-  --accent: #FF6B35;
+  --accent: #E63946;
   --accent-foreground: #FFFFFF;
-  --secondary: #F5F5F5;
+  --secondary: #F4F7FB;
   --secondary-foreground: #1A1A1A;
-  --muted: #F5F5F5;
+  --muted: #F4F7FB;
   --muted-foreground: #555555;
-  --light-bg: #F5F5F5;
+  --light-bg: #F4F7FB;
   --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
   --card: #FFFFFF;
   --card-foreground: #1A1A1A;
   --popover: #FFFFFF;
   --popover-foreground: #1A1A1A;
-  --border: #E2E2E2;
-  --input: #E2E2E2;
-  --ring: #FF6B35;
+  --border: #E0E6EF;
+  --input: #E0E6EF;
+  --ring: #1E3A5F;
 }
 
 @layer base {
@@ -99,7 +99,7 @@
 }
 .atout-card:hover {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
-  border-color: #FF6B35;
+  border-color: #1E3A5F;
 }
 
 .realisation-card {
@@ -111,7 +111,7 @@
 
 /* FAQ */
 .faq-item {
-  border-bottom: 1px solid #E2E2E2;
+  border-bottom: 1px solid #E0E6EF;
 }
 .faq-trigger {
   cursor: pointer;

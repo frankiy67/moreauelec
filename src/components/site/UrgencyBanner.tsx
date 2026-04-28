@@ -2,7 +2,7 @@ import { Phone } from "lucide-react";
 
 export function UrgencyBanner() {
   return (
-    <section id="urgence" className="bg-urgent text-white py-4 overflow-hidden">
+    <section id="urgence" className="bg-[#E63946] text-white py-4 overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3 text-center md:text-left">
           <span className="w-3 h-3 bg-white rounded-full animate-pulse-dot shrink-0" />
@@ -12,7 +12,7 @@ export function UrgencyBanner() {
         </div>
         <a
           href="tel:0756950273"
-          className="inline-flex items-center gap-2 bg-white text-urgent font-bold px-5 py-2.5 rounded-lg hover:bg-white/90 transition whitespace-nowrap"
+          className="inline-flex items-center gap-2 bg-white text-[#E63946] font-bold px-5 py-2.5 rounded-lg hover:bg-white/90 transition whitespace-nowrap"
         >
           <Phone className="w-4 h-4" />
           07 56 95 02 73 →

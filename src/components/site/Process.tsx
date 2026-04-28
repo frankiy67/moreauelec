@@ -36,7 +36,7 @@ export function Process() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           {/* Ligne de connexion desktop */}
-          <div className="hidden lg:block absolute top-6 left-[14%] right-[14%] h-px bg-[#E2E2E2] z-0" />
+          <div className="hidden lg:block absolute top-6 left-[14%] right-[14%] h-px bg-[#E0E6EF] z-0" />
 
           {steps.map((s, i) => (
             <div
@@ -44,7 +44,7 @@ export function Process() {
               className="relative z-10 flex flex-col items-center text-center fade-on-scroll"
               style={{ transitionDelay: `${i * 70}ms` }}
             >
-              <div className="w-12 h-12 rounded-full bg-[#FF6B35] flex items-center justify-center mb-4 shrink-0">
+              <div className="w-12 h-12 rounded-full bg-[#1E3A5F] flex items-center justify-center mb-4 shrink-0">
                 <span className="text-white font-extrabold text-base">{s.num}</span>
               </div>
               <h3 className="font-bold text-[#1A1A1A] text-sm mb-1.5">{s.title}</h3>

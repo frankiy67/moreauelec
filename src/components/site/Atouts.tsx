@@ -43,7 +43,7 @@ const atouts = [
 
 export function Atouts() {
   return (
-    <section id="atouts" className="bg-[#F5F5F5] py-16 md:py-20">
+    <section id="atouts" className="bg-[#F4F7FB] py-16 md:py-20">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12 fade-on-scroll">
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] mb-3">
@@ -58,10 +58,10 @@ export function Atouts() {
           {atouts.map((a, i) => (
             <div
               key={i}
-              className="atout-card bg-white border border-[#E2E2E2] rounded-lg p-6 fade-on-scroll"
+              className="atout-card bg-white border border-[#E0E6EF] rounded-lg p-6 fade-on-scroll"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <div className="w-12 h-12 bg-[#FF6B35] rounded-lg flex items-center justify-center mb-5">
+              <div className="w-12 h-12 bg-[#1E3A5F] rounded-lg flex items-center justify-center mb-5">
                 {a.icon}
               </div>
               <h3 className="font-bold text-[#1A1A1A] text-sm mb-2 leading-snug">

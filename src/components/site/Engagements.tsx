@@ -36,10 +36,10 @@ export function Engagements() {
           {engagements.map(({ Icon, text }, i) => (
             <div
               key={i}
-              className="border border-[#E2E2E2] rounded-lg p-6 fade-on-scroll"
+              className="border border-[#E0E6EF] rounded-lg p-6 fade-on-scroll"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <Icon className="w-7 h-7 text-[#FF6B35] mb-4" strokeWidth={1.5} />
+              <Icon className="w-7 h-7 text-[#1E3A5F] mb-4" strokeWidth={1.5} />
               <p className="font-semibold text-[#1A1A1A] text-sm leading-snug">
                 {text}
               </p>

@@ -44,8 +44,8 @@ export function Contact() {
           </p>
 
           {sent ? (
-            <div className="bg-[#F5F5F5] border border-[#E2E2E2] rounded-lg p-10 text-center">
-              <CheckCircle2 className="w-12 h-12 text-[#FF6B35] mx-auto mb-4" />
+            <div className="bg-[#F4F7FB] border border-[#E0E6EF] rounded-lg p-10 text-center">
+              <CheckCircle2 className="w-12 h-12 text-[#1E3A5F] mx-auto mb-4" />
               <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">Merci !</h3>
               <p className="text-[#666666] text-sm">
                 Karim vous rappelle dans la journée.
@@ -54,7 +54,7 @@ export function Contact() {
           ) : (
             <form
               onSubmit={onSubmit}
-              className="bg-white border border-[#E2E2E2] rounded-lg p-6 md:p-8 space-y-4"
+              className="bg-white border border-[#E0E6EF] rounded-lg p-6 md:p-8 space-y-4"
               noValidate
             >
               <Field name="nom" label="Nom *" error={errors.nom} />
@@ -70,7 +70,7 @@ export function Contact() {
                 <select
                   name="service"
                   defaultValue=""
-                  className="w-full border border-[#E2E2E2] rounded px-3.5 py-2.5 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#FF6B35] text-sm"
+                  className="w-full border border-[#E0E6EF] rounded px-3.5 py-2.5 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#1E3A5F] text-sm"
                 >
                   <option value="" disabled>Choisir...</option>
                   <option>Dépannage urgent</option>
@@ -91,7 +91,7 @@ export function Contact() {
                   name="description"
                   rows={4}
                   maxLength={1200}
-                  className="w-full border border-[#E2E2E2] rounded px-3.5 py-2.5 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#FF6B35] resize-none text-sm"
+                  className="w-full border border-[#E0E6EF] rounded px-3.5 py-2.5 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#1E3A5F] resize-none text-sm"
                   placeholder="Décrivez brièvement votre problème ou besoin..."
                 />
                 {errors.description && <p className="text-red-600 text-xs mt-1">{errors.description}</p>}
@@ -105,13 +105,13 @@ export function Contact() {
                   type="file"
                   name="photo"
                   accept="image/*"
-                  className="block w-full text-sm text-[#666666] file:mr-3 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-[#F5F5F5] file:text-[#1A1A1A] hover:file:bg-[#E2E2E2] cursor-pointer"
+                  className="block w-full text-sm text-[#666666] file:mr-3 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-[#F4F7FB] file:text-[#1A1A1A] hover:file:bg-[#E0E6EF] cursor-pointer"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#FF6B35] text-white font-bold py-3.5 rounded text-sm hover:bg-[#E55A20] transition-colors"
+                className="w-full bg-[#1E3A5F] text-white font-bold py-3.5 rounded text-sm hover:bg-[#163050] transition-colors"
               >
                 Valider ma demande →
               </button>
@@ -121,7 +121,7 @@ export function Contact() {
 
         {/* Contact info */}
         <aside className="lg:col-span-2 fade-on-scroll">
-          <div className="bg-[#FF6B35] text-white rounded-lg p-7 md:p-8 sticky top-20 space-y-6">
+          <div className="bg-[#1E3A5F] text-white rounded-lg p-7 md:p-8 sticky top-20 space-y-6">
             <h3 className="font-bold text-base mb-2">Contactez-moi directement</h3>
 
             <div className="flex gap-3.5">
@@ -190,7 +190,7 @@ function Field({
       <input
         name={name}
         type={type}
-        className="w-full border border-[#E2E2E2] rounded px-3.5 py-2.5 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#FF6B35] text-sm"
+        className="w-full border border-[#E0E6EF] rounded px-3.5 py-2.5 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#1E3A5F] text-sm"
       />
       {error && <p className="text-red-600 text-xs mt-1">{error}</p>}
     </div>
