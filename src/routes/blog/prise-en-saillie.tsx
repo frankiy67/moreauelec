@@ -4,7 +4,7 @@ import { BlogLayout } from "@/components/site/BlogLayout";
 export const Route = createFileRoute("/blog/prise-en-saillie")({
   head: () => ({
     meta: [
-      { title: "La prise en saillie : différence avec une prise encastrée — KB Électricité" },
+      { title: "La prise en saillie : différence avec une prise encastrée — Voltane Élec" },
       {
         name: "description",
         content:

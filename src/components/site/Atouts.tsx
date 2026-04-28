@@ -61,7 +61,7 @@ export function Atouts() {
               className="atout-card bg-white border border-[#E2E2E2] rounded-lg p-6 fade-on-scroll"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <div className="w-12 h-12 bg-[#E8541A] rounded-lg flex items-center justify-center mb-5">
+              <div className="w-12 h-12 bg-[#FF6B35] rounded-lg flex items-center justify-center mb-5">
                 {a.icon}
               </div>
               <h3 className="font-bold text-[#1A1A1A] text-sm mb-2 leading-snug">

@@ -4,7 +4,7 @@ import { BlogLayout } from "@/components/site/BlogLayout";
 export const Route = createFileRoute("/blog/circuit-electrique-maison")({
   head: () => ({
     meta: [
-      { title: "Circuit électrique d'une maison : schéma et chiffrage — KB Électricité" },
+      { title: "Circuit électrique d'une maison : schéma et chiffrage — Voltane Élec" },
       {
         name: "description",
         content:

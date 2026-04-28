@@ -4,7 +4,7 @@ import { BlogLayout } from "@/components/site/BlogLayout";
 export const Route = createFileRoute("/blog/interrupteur-temporise")({
   head: () => ({
     meta: [
-      { title: "Tout savoir sur les interrupteurs temporisés — KB Électricité" },
+      { title: "Tout savoir sur les interrupteurs temporisés — Voltane Élec" },
       {
         name: "description",
         content:

@@ -39,7 +39,7 @@
   --foreground: #1A1A1A;
   --primary: #1A1A1A;
   --primary-foreground: #FFFFFF;
-  --accent: #E8541A;
+  --accent: #FF6B35;
   --accent-foreground: #FFFFFF;
   --secondary: #F5F5F5;
   --secondary-foreground: #1A1A1A;
@@ -54,7 +54,7 @@
   --popover-foreground: #1A1A1A;
   --border: #E2E2E2;
   --input: #E2E2E2;
-  --ring: #E8541A;
+  --ring: #FF6B35;
 }
 
 @layer base {
@@ -99,7 +99,7 @@
 }
 .atout-card:hover {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
-  border-color: #E8541A;
+  border-color: #FF6B35;
 }
 
 .realisation-card {

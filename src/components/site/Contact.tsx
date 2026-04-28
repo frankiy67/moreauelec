@@ -45,7 +45,7 @@ export function Contact() {
 
           {sent ? (
             <div className="bg-[#F5F5F5] border border-[#E2E2E2] rounded-lg p-10 text-center">
-              <CheckCircle2 className="w-12 h-12 text-[#E8541A] mx-auto mb-4" />
+              <CheckCircle2 className="w-12 h-12 text-[#FF6B35] mx-auto mb-4" />
               <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">Merci !</h3>
               <p className="text-[#666666] text-sm">
                 Karim vous rappelle dans la journée.
@@ -70,7 +70,7 @@ export function Contact() {
                 <select
                   name="service"
                   defaultValue=""
-                  className="w-full border border-[#E2E2E2] rounded px-3.5 py-2.5 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#E8541A] text-sm"
+                  className="w-full border border-[#E2E2E2] rounded px-3.5 py-2.5 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#FF6B35] text-sm"
                 >
                   <option value="" disabled>Choisir...</option>
                   <option>Dépannage urgent</option>
@@ -91,7 +91,7 @@ export function Contact() {
                   name="description"
                   rows={4}
                   maxLength={1200}
-                  className="w-full border border-[#E2E2E2] rounded px-3.5 py-2.5 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#E8541A] resize-none text-sm"
+                  className="w-full border border-[#E2E2E2] rounded px-3.5 py-2.5 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#FF6B35] resize-none text-sm"
                   placeholder="Décrivez brièvement votre problème ou besoin..."
                 />
                 {errors.description && <p className="text-red-600 text-xs mt-1">{errors.description}</p>}
@@ -111,7 +111,7 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-[#E8541A] text-white font-bold py-3.5 rounded text-sm hover:bg-[#d04a16] transition-colors"
+                className="w-full bg-[#FF6B35] text-white font-bold py-3.5 rounded text-sm hover:bg-[#E55A20] transition-colors"
               >
                 Valider ma demande →
               </button>
@@ -121,14 +121,14 @@ export function Contact() {
 
         {/* Contact info */}
         <aside className="lg:col-span-2 fade-on-scroll">
-          <div className="bg-[#E8541A] text-white rounded-lg p-7 md:p-8 sticky top-20 space-y-6">
+          <div className="bg-[#FF6B35] text-white rounded-lg p-7 md:p-8 sticky top-20 space-y-6">
             <h3 className="font-bold text-base mb-2">Contactez-moi directement</h3>
 
             <div className="flex gap-3.5">
               <Phone className="w-5 h-5 shrink-0 mt-0.5" strokeWidth={2} />
               <div>
-                <a href="tel:06XXXXXXXX" className="font-extrabold text-xl leading-none block mb-1">
-                  06 XX XX XX XX
+                <a href="tel:0756950273" className="font-extrabold text-xl leading-none block mb-1">
+                  07 56 95 02 73
                 </a>
                 <p className="text-white/75 text-xs">c'est moi qui réponds</p>
               </div>
@@ -144,10 +144,10 @@ export function Contact() {
             <div className="flex gap-3.5">
               <Mail className="w-5 h-5 shrink-0 mt-0.5" strokeWidth={2} />
               <a
-                href="mailto:karim.kbelec@gmail.com"
+                href="mailto:contact@voltanelec.fr"
                 className="text-sm text-white/90 hover:text-white transition-colors break-all"
               >
-                karim.kbelec@gmail.com
+                contact@voltanelec.fr
               </a>
             </div>
 
@@ -190,7 +190,7 @@ function Field({
       <input
         name={name}
         type={type}
-        className="w-full border border-[#E2E2E2] rounded px-3.5 py-2.5 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#E8541A] text-sm"
+        className="w-full border border-[#E2E2E2] rounded px-3.5 py-2.5 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#FF6B35] text-sm"
       />
       {error && <p className="text-red-600 text-xs mt-1">{error}</p>}
     </div>

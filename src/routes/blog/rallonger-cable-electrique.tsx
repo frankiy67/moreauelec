@@ -4,7 +4,7 @@ import { BlogLayout } from "@/components/site/BlogLayout";
 export const Route = createFileRoute("/blog/rallonger-cable-electrique")({
   head: () => ({
     meta: [
-      { title: "Rallonger un câble électrique : comment faire correctement ? — KB Électricité" },
+      { title: "Rallonger un câble électrique : comment faire correctement ? — Voltane Élec" },
       {
         name: "description",
         content:

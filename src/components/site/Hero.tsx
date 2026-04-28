@@ -12,7 +12,7 @@ export function Hero() {
   return (
     <section id="top" className="bg-white pt-[60px]">
       {/* Top bar orange */}
-      <div className="bg-[#E8541A] py-2 px-4 text-center text-white text-sm font-semibold">
+      <div className="bg-[#FF6B35] py-2 px-4 text-center text-white text-sm font-semibold">
         Intervention sous 2h sur Toulouse et 30km — Devis gratuit avant toute intervention
       </div>
 
@@ -30,7 +30,7 @@ export function Hero() {
       <div className="container mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-start py-12 md:py-16">
         {/* Left: text */}
         <div>
-          <p className="text-[#E8541A] font-semibold text-sm uppercase tracking-wide mb-3">
+          <p className="text-[#FF6B35] font-semibold text-sm uppercase tracking-wide mb-3">
             Électricien indépendant — Toulouse &amp; 30km
           </p>
 
@@ -49,14 +49,14 @@ export function Hero() {
 
           {/* Phone big */}
           <a
-            href="tel:06XXXXXXXX"
+            href="tel:0756950273"
             className="inline-flex items-center gap-3 mb-8 group"
           >
-            <span className="flex items-center justify-center w-12 h-12 rounded-full bg-[#E8541A] text-white group-hover:bg-[#d04a16] transition-colors">
+            <span className="flex items-center justify-center w-12 h-12 rounded-full bg-[#FF6B35] text-white group-hover:bg-[#E55A20] transition-colors">
               <Phone className="w-5 h-5" strokeWidth={2.5} />
             </span>
             <div>
-              <div className="text-[#E8541A] font-extrabold text-2xl leading-none">06 XX XX XX XX</div>
+              <div className="text-[#FF6B35] font-extrabold text-2xl leading-none">07 56 95 02 73</div>
               <div className="text-[#777777] text-xs mt-0.5">Lun–Sam 8h–19h · Je réponds moi-même</div>
             </div>
           </a>
@@ -69,7 +69,7 @@ export function Hero() {
               { icon: Shield, text: "Assuré décennale — SIRET 481 293 107 00034" },
             ].map(({ icon: Icon, text }, i) => (
               <li key={i} className="flex items-center gap-2.5 text-sm text-[#444444]">
-                <Icon className="w-4 h-4 text-[#E8541A] shrink-0" strokeWidth={2} />
+                <Icon className="w-4 h-4 text-[#FF6B35] shrink-0" strokeWidth={2} />
                 {text}
               </li>
             ))}
@@ -77,7 +77,7 @@ export function Hero() {
         </div>
 
         {/* Right: callback form */}
-        <div className="bg-[#E8541A] rounded-lg p-7 md:p-8 text-white shadow-md">
+        <div className="bg-[#FF6B35] rounded-lg p-7 md:p-8 text-white shadow-md">
           {sent ? (
             <div className="text-center py-6">
               <CheckCircle2 className="w-14 h-14 mx-auto mb-4 text-white" />
@@ -114,7 +114,7 @@ export function Hero() {
                     type="tel"
                     name="telephone"
                     required
-                    placeholder="06 XX XX XX XX"
+                    placeholder="07 56 95 02 73"
                     className="w-full bg-white/15 border border-white/30 rounded px-3.5 py-2.5 text-white placeholder-white/50 text-sm focus:outline-none focus:border-white transition-colors"
                   />
                 </div>
@@ -138,7 +138,7 @@ export function Hero() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-white text-[#E8541A] font-extrabold py-3 rounded text-sm hover:bg-[#f9f9f9] transition-colors mt-1"
+                  className="w-full bg-white text-[#FF6B35] font-extrabold py-3 rounded text-sm hover:bg-[#f9f9f9] transition-colors mt-1"
                 >
                   Être rappelé gratuitement →
                 </button>

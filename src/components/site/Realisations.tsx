@@ -55,7 +55,7 @@ export function Realisations() {
                 />
               </div>
               <div className="p-5">
-                <div className="text-[#E8541A] font-bold text-xs uppercase tracking-wide mb-2">
+                <div className="text-[#FF6B35] font-bold text-xs uppercase tracking-wide mb-2">
                   {c.label}
                 </div>
                 <p className="text-[#555555] text-sm leading-relaxed">{c.desc}</p>

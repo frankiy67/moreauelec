@@ -44,7 +44,7 @@ export function Process() {
               className="relative z-10 flex flex-col items-center text-center fade-on-scroll"
               style={{ transitionDelay: `${i * 70}ms` }}
             >
-              <div className="w-12 h-12 rounded-full bg-[#E8541A] flex items-center justify-center mb-4 shrink-0">
+              <div className="w-12 h-12 rounded-full bg-[#FF6B35] flex items-center justify-center mb-4 shrink-0">
                 <span className="text-white font-extrabold text-base">{s.num}</span>
               </div>
               <h3 className="font-bold text-[#1A1A1A] text-sm mb-1.5">{s.title}</h3>

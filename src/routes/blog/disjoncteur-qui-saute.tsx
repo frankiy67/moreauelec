@@ -4,7 +4,7 @@ import { BlogLayout } from "@/components/site/BlogLayout";
 export const Route = createFileRoute("/blog/disjoncteur-qui-saute")({
   head: () => ({
     meta: [
-      { title: "Pourquoi le disjoncteur saute sans rien de branché — KB Électricité" },
+      { title: "Pourquoi le disjoncteur saute sans rien de branché — Voltane Élec" },
       {
         name: "description",
         content:

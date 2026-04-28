@@ -4,7 +4,7 @@ import { BlogLayout } from "@/components/site/BlogLayout";
 export const Route = createFileRoute("/blog/branchement-quatre-fils")({
   head: () => ({
     meta: [
-      { title: "Branchement à 4 fils : tout savoir pour le réaliser correctement — KB Électricité" },
+      { title: "Branchement à 4 fils : tout savoir pour le réaliser correctement — Voltane Élec" },
       {
         name: "description",
         content:

@@ -17,9 +17,9 @@ export function BlogLayout({ title, breadcrumb, children }: BlogLayoutProps) {
         {/* Breadcrumb */}
         <div className="bg-[#F5F5F5] border-b border-[#E2E2E2]">
           <div className="container mx-auto px-4 lg:px-8 py-3 flex items-center gap-1.5 text-xs text-[#666]">
-            <Link to="/" className="hover:text-[#E8541A] transition-colors">Accueil</Link>
+            <Link to="/" className="hover:text-[#FF6B35] transition-colors">Accueil</Link>
             <ChevronRight className="w-3 h-3 shrink-0 text-[#BBBBBB]" />
-            <Link to="/" hash="blog" className="hover:text-[#E8541A] transition-colors">Blog</Link>
+            <Link to="/" hash="blog" className="hover:text-[#FF6B35] transition-colors">Blog</Link>
             <ChevronRight className="w-3 h-3 shrink-0 text-[#BBBBBB]" />
             <span className="text-[#1A1A1A] font-semibold truncate max-w-[200px] sm:max-w-none">{breadcrumb}</span>
           </div>
@@ -39,7 +39,7 @@ export function BlogLayout({ title, breadcrumb, children }: BlogLayoutProps) {
 
             {/* Sidebar */}
             <aside className="lg:sticky lg:top-[80px]">
-              <div className="bg-[#E8541A] rounded-lg p-6 text-white">
+              <div className="bg-[#FF6B35] rounded-lg p-6 text-white">
                 <p className="font-extrabold text-lg leading-tight mb-2">
                   Besoin d'un électricien à Toulouse ?
                 </p>
@@ -47,11 +47,11 @@ export function BlogLayout({ title, breadcrumb, children }: BlogLayoutProps) {
                   Karim intervient sous 2h. Devis gratuit, prix annoncé avant le départ.
                 </p>
                 <a
-                  href="tel:06XXXXXXXX"
-                  className="flex items-center justify-center gap-2 bg-white text-[#E8541A] font-bold py-3 px-4 rounded text-base hover:bg-white/90 transition-colors mb-3"
+                  href="tel:0756950273"
+                  className="flex items-center justify-center gap-2 bg-white text-[#FF6B35] font-bold py-3 px-4 rounded text-base hover:bg-white/90 transition-colors mb-3"
                 >
                   <Phone className="w-4 h-4 shrink-0" strokeWidth={2.5} />
-                  06 XX XX XX XX
+                  07 56 95 02 73
                 </a>
                 <Link
                   to="/"
