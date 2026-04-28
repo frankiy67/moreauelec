@@ -1,12 +1,13 @@
 const communes = [
-  "[VILLE]",
-  "[COMMUNE 1]",
-  "[COMMUNE 2]",
-  "[COMMUNE 3]",
-  "[COMMUNE 4]",
-  "[COMMUNE 5]",
-  "[COMMUNE 6]",
-  "[COMMUNE 7]",
+  "Toulouse",
+  "Blagnac",
+  "Colomiers",
+  "Tournefeuille",
+  "Muret",
+  "Ramonville",
+  "Castanet",
+  "Balma",
+  "Saint-Orens",
 ];
 
 export function Zones() {
@@ -15,12 +16,12 @@ export function Zones() {
       <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
         <div className="mb-10 fade-on-scroll">
           <h2 className="text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-4">
-            Je travaille à [VILLE]
+            Je travaille à Toulouse
             <br />
             et 30 km autour.
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Je ne travaille pas partout en France. Je travaille bien sur [VILLE]
+            Je ne travaille pas partout en France. Je travaille bien sur Toulouse
             et les communes autour. C'est plus honnête pour tout le monde.
           </p>
         </div>

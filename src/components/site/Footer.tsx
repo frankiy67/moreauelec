@@ -12,7 +12,7 @@ export function Footer() {
             Voltane Élec
           </a>
           <p className="text-white/70 text-sm mb-2">
-            Artisan indépendant à [VILLE].
+            Artisan indépendant à Toulouse.
           </p>
           <p className="text-white/50 text-sm italic">
             On arrive. On répare. On garantit.

@@ -2,10 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { UrgencyBanner } from "@/components/site/UrgencyBanner";
-import { Callback } from "@/components/site/Callback";
+import { Atouts } from "@/components/site/Atouts";
 import { WhyUs } from "@/components/site/WhyUs";
 import { Services } from "@/components/site/Services";
+import { Process } from "@/components/site/Process";
+import { Realisations } from "@/components/site/Realisations";
 import { Reviews } from "@/components/site/Reviews";
+import { Blog } from "@/components/site/Blog";
+import { FAQ } from "@/components/site/FAQ";
 import { Zones } from "@/components/site/Zones";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
@@ -17,12 +21,12 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: "Voltane Élec",
   description:
-    "Électricien artisan indépendant à Toulouse. Dépannage, tableau électrique, éclairage, mise aux normes. Assuré décennale.",
+    "Karim Benali, électricien indépendant à Toulouse depuis 12 ans. Dépannage sous 2h, devis gratuit, assuré décennale.",
   telephone: "+330756950273",
   email: "contact@voltane-elec.fr",
   areaServed: [
     "Toulouse", "Blagnac", "Colomiers", "Tournefeuille", "Muret",
-    "Ramonville-Saint-Agne", "Castanet-Tolosan", "Balma"
+    "Ramonville-Saint-Agne", "Castanet-Tolosan", "Balma", "Saint-Orens-de-Gameville"
   ],
   address: { "@type": "PostalAddress", addressLocality: "Toulouse", addressRegion: "Haute-Garonne", addressCountry: "FR" },
   openingHours: ["Mo-Sa 08:00-19:00"],
@@ -60,10 +64,14 @@ function Index() {
       <main>
         <Hero />
         <UrgencyBanner />
-        <Callback />
+        <Atouts />
         <WhyUs />
         <Services />
+        <Process />
+        <Realisations />
         <Reviews />
+        <Blog />
+        <FAQ />
         <Zones />
         <Contact />
       </main>
